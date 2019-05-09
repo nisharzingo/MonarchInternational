@@ -1,0 +1,654 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#2C3039"
+    tools:context="details.hotel.app.monarchint.UI.Fragments.AmenityFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:background="#2C3039"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                android:id="@+id/car_parking"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|start"
+                android:layout_weight="3"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_margin="5dp"
+                android:text="Car Parking"
+                />
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="right|center_vertical"
+                android:layout_margin="2dp"
+                android:background="@drawable/ic_arrows_right"/>
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/car_lay"
+            android:orientation="vertical">
+
+            <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Free Parking"
+                android:layout_margin="5dp"
+                android:textColor="@color/colorPrimary"
+                />
+
+            <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Parking Available"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/colorPrimary"
+                />
+
+
+        </LinearLayout>
+
+
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0.1dp"
+            android:layout_marginRight="35dp"
+            android:layout_marginLeft="25dp"
+            android:background="#393D46"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:background="#2C3039"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                android:id="@+id/guest_services"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|start"
+                android:layout_weight="3"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_margin="5dp"
+                android:text="Guest Services"
+                />
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="right|center_vertical"
+                android:layout_margin="2dp"
+                android:background="@drawable/ic_arrows_right"/>
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/guest_lay"
+            android:orientation="vertical">
+
+            <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="24 hour front desk"
+                android:layout_margin="5dp"
+                android:textColor="@color/colorPrimary"
+                />
+
+            <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dry cleaning / laundry service"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/colorPrimary"
+                />
+
+
+            <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Travel desk"
+                android:layout_margin="5dp"
+                android:textColor="@color/colorPrimary"
+                />
+
+            <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Beach"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/colorPrimary"
+                />
+
+
+            <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Elder Access"
+                android:layout_margin="5dp"
+                android:textColor="@color/colorPrimary"
+                />
+
+            <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Wake up calls"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/colorPrimary"
+                />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0.1dp"
+            android:layout_marginRight="35dp"
+            android:layout_marginLeft="25dp"
+            android:background="#393D46"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:background="#2C3039"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                android:id="@+id/inhouse_dining"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|start"
+                android:layout_weight="3"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_margin="5dp"
+                android:text="Inhouse dining"
+                />
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="right|center_vertical"
+                android:layout_margin="2dp"
+                android:background="@drawable/ic_arrows_right"/>
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/dining_lay"
+            android:orientation="vertical">
+
+
+
+
+            <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dining"
+                android:layout_margin="5dp"
+                android:textColor="@color/colorPrimary"
+                />
+
+            <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Meals Included"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/colorPrimary"
+                />
+
+
+            <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Free Breakfast"
+                android:layout_margin="5dp"
+                android:textColor="@color/colorPrimary"
+                />
+
+            <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Room service - limited service"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/colorPrimary"
+                />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0.1dp"
+            android:layout_marginRight="35dp"
+            android:layout_marginLeft="25dp"
+            android:background="#393D46"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:background="#2C3039"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                android:id="@+id/miscellaneous"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|start"
+                android:layout_weight="3"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_margin="5dp"
+                android:text="Miscellaneous"
+                />
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="right|center_vertical"
+                android:layout_margin="2dp"
+                android:background="@drawable/ic_arrows_right"/>
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/mis_lay"
+            android:orientation="vertical">
+
+            <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Car Rental Desk"
+                android:layout_margin="5dp"
+                android:textColor="@color/colorPrimary"
+                />
+
+            <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Disabled Access Facilities"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/colorPrimary"
+                />
+
+
+            <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Economy"
+                android:layout_margin="5dp"
+                android:textColor="@color/colorPrimary"
+                />
+
+            <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Free Parking"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/colorPrimary"
+                />
+
+
+            <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Family Rooms"
+                android:layout_margin="5dp"
+                android:textColor="@color/colorPrimary"
+                />
+
+            <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Govt Authorized Liquor Shop"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/colorPrimary"
+                />
+
+            <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Linen Provided"
+                android:layout_margin="5dp"
+                android:textColor="@color/colorPrimary"
+                />
+
+            <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pets not allowed"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/colorPrimary"
+                />
+
+
+            <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Wifi access"
+                android:layout_margin="5dp"
+                android:textColor="@color/colorPrimary"
+                />
+
+            <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Credit Cards Accepted"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/colorPrimary"
+                />
+
+
+            <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Early Arrival"
+                android:layout_margin="5dp"
+                android:textColor="@color/colorPrimary"
+                />
+
+            <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Extended Stay"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/colorPrimary"
+                />
+
+            <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Free Wifi"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/colorPrimary"
+                />
+
+
+            <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lift/Elevator"
+                android:layout_margin="5dp"
+                android:textColor="@color/colorPrimary"
+                />
+
+            <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Non Smoking"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/colorPrimary"
+                />
+
+            <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Resort"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/colorPrimary"
+                />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0.1dp"
+            android:layout_marginRight="35dp"
+            android:layout_marginLeft="25dp"
+            android:background="#393D46"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:background="#2C3039"
+
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                android:id="@+id/property_features"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|start"
+                android:layout_weight="3"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_margin="5dp"
+                android:text="Property Features"
+                />
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="right|center_vertical"
+                android:layout_margin="2dp"
+                android:background="@drawable/ic_arrows_right"/>
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/property_lay"
+            android:orientation="vertical">
+
+
+
+
+            <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Non-smoking floors"
+                android:layout_margin="5dp"
+                android:textColor="@color/colorPrimary"
+                />
+
+            <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Non-smoking property"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/colorPrimary"
+                />
+
+
+
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0.1dp"
+            android:layout_marginRight="35dp"
+            android:layout_marginLeft="25dp"
+            android:background="#393D46"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:background="#2C3039"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                android:id="@+id/recreation_facilities"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|start"
+                android:layout_weight="3"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_margin="5dp"
+                android:text="Recreation facilities"
+                />
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="right|center_vertical"
+                android:layout_margin="2dp"
+                android:background="@drawable/ic_arrows_right"/>
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/recreation_lay"
+            android:orientation="vertical">
+
+
+
+
+            <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="BBQ facilities"
+                android:layout_margin="5dp"
+                android:textColor="@color/colorPrimary"
+                />
+
+            <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fishing"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/colorPrimary"
+                />
+
+
+            <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Direct beach access"
+                android:layout_margin="5dp"
+                android:textColor="@color/colorPrimary"
+                />
+
+
+
+        </LinearLayout>
+
+
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0.1dp"
+            android:layout_marginRight="35dp"
+            android:layout_marginLeft="25dp"
+            android:background="#393D46"
+            />
+
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/hotel_amenity_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:visibility="gone"
+        app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+        />
+
+    </LinearLayout>
+
+</ScrollView>

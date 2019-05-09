@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="details.hotel.app.monarchint">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".UI.Activities.SplashScreen"
+            android:theme="@style/AppTheme.FullScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".UI.Activities.SignUpOptionScreen"
+            android:theme="@style/AppTheme.FullScreen" />
+        <activity
+            android:name=".UI.Activities.LoginScreen"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.Activities.SignUpScreen"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.Activities.HotelOptionsScreen"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyD21M6J1FM-pYD4pAon-8P8kYD3zO431p0" />
+
+        <activity
+            android:name=".UI.Activities.BookAvailablityScreen"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.Activities.BookingPaymentDetailsScreen"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <meta-data
+            android:name="com.razorpay.ApiKey"
+            android:value="rzp_live_tTRIgCc7PPKNq0" />
+
+        <activity
+            android:name=".UI.Activities.AmenityBookingActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".UI.Resto.FoodListActivity" />
+        <activity
+            android:name=".UI.Activities.BookingDoneScreen"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.Activities.RestaurantMenuScreen"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".UI.Activities.ThingsToDoScreen" />
+        <activity android:name=".UI.Activities.PointsScreen" />
+        <activity android:name=".UI.Activities.BookingHistoryActivity" />
+        <activity
+            android:name=".UI.Activities.ProfileOptionScreen"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="com.airpay.airpaysdk_simplifiedotp.AirpayActivity" />
+        <activity android:name=".UI.Activities.BaseActivity" />
+        <activity
+            android:name=".UI.Activities.CategoryBookScreen"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".UI.Activities.AboutHotelActivity"></activity>
+    </application>
+
+</manifest>

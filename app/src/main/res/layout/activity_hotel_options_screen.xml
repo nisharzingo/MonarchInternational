@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/base_layout"
+    tools:context="details.hotel.app.monarchint.UI.Activities.HotelOptionsScreen">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/general_appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimaryDark"
+                app:popupTheme="@style/Theme.AppCompat.NoActionBar"
+
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textSize="18sp"
+                        android:gravity="center_vertical"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="5dp"
+                        android:textStyle="bold"
+                        android:text="Welcome to Hotel Monarch International"
+                        android:textColor="@color/white"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:layout_marginTop="5dp"
+                        android:visibility="gone"
+                        android:text="Blissful Bihar"
+                        android:textColor="@color/text_grey"
+                        />
+                </LinearLayout>
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.AppBarLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/general_appbar"
+
+            android:id="@+id/hotel_fragment_view">
+
+
+
+        </FrameLayout>
+
+
+
+
+    </LinearLayout>
+
+
+       <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="#ffffff">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/colorPrimary"
+                android:id="@+id/hotel_menu"
+                >
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/hotel_logo"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:id="@+id/hotel_logo"
+                    android:scaleType="centerCrop"
+                    />
+
+
+                <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_margin="5dp"
+                    android:id="@+id/hotel_name_list"
+                    android:text=""
+                    android:textColor="#ffffff"
+                    />
+
+                <RatingBar
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:stepSize="0.1"
+                    android:visibility="gone"
+                    android:id="@+id/hotel_ratingbar"
+                    android:progressTint="@color/colorPrimaryDark"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:focusable="true"
+                    android:max="5"
+                    android:rating="4"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:background="#2C3039"
+                android:id="@+id/hotel_list_layout"
+                android:layout_height="wrap_content">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+                    <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                        android:id="@+id/select_hotel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|start"
+                        android:layout_weight="3"
+                        android:textSize="18sp"
+                        android:textColor="@color/white"
+                        android:layout_margin="5dp"
+                        android:text="Select Hotel"
+                        />
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="right|center_vertical"
+                        android:layout_margin="2dp"
+                        android:background="@drawable/ic_arrows_right"/>
+
+
+
+                </LinearLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/hotel_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+                    />
+
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="0.1dp"
+                    android:layout_marginRight="35dp"
+                    android:layout_marginLeft="25dp"
+                    android:background="#393D46"
+                    />
+
+
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/navbar_list"
+                android:background="#2C3039"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+            </ListView>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</android.support.v4.widget.DrawerLayout>

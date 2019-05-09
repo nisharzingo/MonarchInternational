@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:focusable="false"
+    android:focusableInTouchMode="true"
+    xmlns:card_view="http://schemas.android.com/tools"
+    tools:context=".UI.Activities.BookingPaymentDetailsScreen">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_back_screen"
+            />
+
+        <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:gravity="center_vertical"
+            android:paddingRight="35dp"
+            android:text="Booking Screen"/>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#ffffff">
+
+            <LinearLayout
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/primary_circle"
+                android:layout_marginTop="10dp">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginBottom="2dp"
+                    android:src="@drawable/hotel_logo"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="16dp">
+
+                    <TextView
+                        android:id="@+id/info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Booking Information"
+                        android:textColor="#333333"
+                        android:layout_marginLeft="16dp"
+                        android:textSize="16dp"
+                        />
+
+
+                    <LinearLayout
+                        android:layout_marginTop="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:background="#f7f7f9">
+
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@drawable/spinner_background"
+                            android:id="@+id/booking_source_title"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight="1"
+                            android:entries="@array/ota_type_spinner"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginTop="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:background="#f7f7f9">
+
+                        <EditText
+                            android:id="@+id/booking_id"
+                            android:layout_height="match_parent"
+                            android:layout_width="match_parent"
+                            android:textColorHint="@color/subtext"
+                            android:maxLines="1"
+                            android:hint="Booking Id"
+                            android:inputType="text"
+                            android:layout_marginTop="11dp"
+                            android:layout_marginBottom="11dp"
+                            android:layout_marginLeft="16dp"
+
+
+                            android:background="#00000000"
+                            />
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_marginTop="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:background="#f7f7f9">
+
+                        <EditText
+                            android:id="@+id/fullname"
+                            android:layout_height="match_parent"
+                            android:layout_width="match_parent"
+                            android:textColorHint="@color/subtext"
+                            android:maxLines="1"
+                            android:hint="Full Name"
+                            android:inputType="text"
+                            android:layout_marginTop="11dp"
+                            android:layout_marginBottom="11dp"
+                            android:layout_marginLeft="16dp"
+
+
+                            android:background="#00000000"
+                            />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginTop="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:background="#f7f7f9">
+
+                        <EditText
+                            android:id="@+id/email"
+                            android:layout_height="match_parent"
+                            android:layout_width="match_parent"
+                            android:textColorHint="@color/subtext"
+                            android:maxLines="1"
+                            android:hint="Email"
+                            android:inputType="text"
+                            android:layout_marginTop="11dp"
+                            android:layout_marginBottom="11dp"
+                            android:layout_marginLeft="16dp"
+                            android:background="#00000000"
+                            />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginTop="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:background="#f7f7f9"
+                        android:layout_marginBottom="21dp">
+
+                        <EditText
+                            android:id="@+id/phone"
+                            android:layout_height="match_parent"
+                            android:layout_width="match_parent"
+                            android:textColorHint="@color/subtext"
+                            android:maxLines="1"
+                            android:hint="Phone number"
+                            android:inputType="number"
+                            android:layout_marginTop="11dp"
+                            android:layout_marginBottom="11dp"
+                            android:layout_marginLeft="16dp"
+                            android:background="#00000000"
+                            />
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/pay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimary"
+                        android:text="Send Request"
+                        android:textSize="20dp"
+                        android:textColor="#fff"
+                        android:gravity="center"
+                        android:padding="12dp"
+                        android:layout_alignParentBottom="true"
+                        />
+
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
+
+
+</LinearLayout>

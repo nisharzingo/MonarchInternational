@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    xmlns:font="http://schemas.android.com/apk/lib/com.thoughtworks.retailshop.util"
+    tools:context=".UI.Activities.SplashScreen">
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:background="@color/colorPrimary"
+        >
+        <ImageView
+            android:id="@+id/logo_img"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_toRightOf="@+id/pro_txt"
+            android:src="@drawable/hotel_logo" />
+
+        <TextView
+            android:id="@+id/pro_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/logo_img"
+            android:layout_centerHorizontal="true"
+            android:shadowColor="#000"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="1.0"
+            android:text="Hotel Monarch"
+            android:textColor="#fff"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            font:ttf_name="paranoid.ttf" />
+
+        <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+            android:id="@+id/track_txt"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/pro_txt"
+            android:layout_below="@+id/pro_txt"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="1.0"
+            android:text="International Business Hotel"
+            android:textColor="#FFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:typeface="serif" />
+
+
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ver: 1.1"
+        android:textColor="#FFFFFF"
+        android:id="@+id/version_name"
+        android:layout_gravity="right"
+        android:layout_margin="10dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="Powered by"
+            android:textColor="#FFFFFF"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:textStyle="bold"
+
+            android:layout_above="@+id/pics"
+
+            />
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="35dp"
+            android:id="@+id/pics"
+            android:background="@color/white"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/zingo_hote_power"
+            android:gravity="center"
+            android:layout_marginBottom="5dp"
+            android:layout_alignParentBottom="true"
+            />
+
+    </RelativeLayout>
+
+
+
+</FrameLayout>
+

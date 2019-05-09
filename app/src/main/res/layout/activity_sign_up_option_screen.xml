@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/hotel1"
+    android:fillViewport="true"
+    tools:context=".UI.Activities.SignUpOptionScreen">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:orientation="vertical">
+
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:id="@+id/app_logos"
+        android:src="@drawable/hotel_logo"
+        android:layout_gravity="center_horizontal"
+        android:scaleType="fitXY"
+        android:layout_marginTop="10dp"/>
+
+
+
+    <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hotel Monarch International"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:textSize="28sp"
+        android:paddingBottom="10dp"
+        android:layout_marginLeft="45dp"
+        android:gravity="center"
+        android:layout_marginRight="45dp"
+        android:layout_marginTop="10dp"/>
+
+
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:background="#8d000000"
+        android:fillViewport="true"
+        android:layout_height="match_parent">
+
+
+        <android.support.v4.view.ViewPager
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="21dp"
+            android:layout_gravity="center"
+            android:id="@+id/view_pager_slide">
+
+        </android.support.v4.view.ViewPager>
+
+        <me.relex.circleindicator.CircleIndicator
+            android:id="@+id/indicator"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_below="@+id/view"
+            app:ci_drawable="@drawable/ic_dot"
+            app:ci_drawable_unselected="@drawable/ic_dot"
+            app:ci_height="8dp"
+            app:ci_width="8dp"
+            android:backgroundTint="@android:color/white"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center">
+
+        <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/signup_ract"
+            android:text="Sign Up"
+            android:id="@+id/signUp"
+            android:paddingTop="13dp"
+            android:paddingBottom="15dp"
+            android:textSize="18sp"
+            android:paddingRight="50dp"
+            android:paddingLeft="50dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center"
+            android:textColor="#ffffff"/>
+
+        <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/mediatransperent_ract"
+            android:text="Login"
+            android:id="@+id/login"
+            android:paddingTop="13dp"
+            android:paddingBottom="15dp"
+            android:textSize="18sp"
+            android:paddingRight="58dp"
+            android:paddingLeft="58dp"
+            android:gravity="bottom"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:textColor="#ffffff"/>
+
+
+        </LinearLayout>
+        <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+            android:id="@+id/login_user_asguest_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="15dp"
+            android:text="Skip"
+            android:textColor="#d9e43d"
+            android:textSize="24dp" />
+
+
+
+
+
+
+
+    </FrameLayout>
+
+    </LinearLayout>
+
+    </RelativeLayout>
+
+</ScrollView>

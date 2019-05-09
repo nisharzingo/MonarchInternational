@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#00000000">
+
+    <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Best Memories start here."
+        android:textColor="#ffffff"
+        android:textSize="14sp"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:gravity="center"
+        android:layout_marginTop="5dp"/>
+
+
+
+
+</LinearLayout>

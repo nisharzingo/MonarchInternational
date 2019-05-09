@@ -1,0 +1,263 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="details.hotel.app.monarchint.UI.Fragments.BookNowFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#8000">
+
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:scaleType="fitXY"
+                    android:background="@drawable/gulf"/>
+
+
+
+                <ImageView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:scaleType="fitXY"
+                    android:background="#99000000"/>
+
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+
+
+
+
+                    <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                        android:id="@+id/category_name_book"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:layout_gravity="center"
+                        android:gravity="top|center"
+                        android:textSize="18dp"
+                        android:textColor="#fff"/>
+
+
+
+                    <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                        android:id="@+id/room_avail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:gravity="top|center"
+                        android:textSize="16dp"
+                        android:textColor="#fff"/>
+
+                    <LinearLayout
+                        android:id="@+id/category_change"
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/rounded"
+                        android:padding="15dp">
+
+
+
+
+
+                        <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                            android:id="@+id/changeCategory"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="Change Category"
+                            android:textColor="#fff"
+                            android:layout_marginLeft="10dp"
+
+
+                            />
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+
+
+
+
+            </FrameLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/date_layout"
+                android:padding="15dp"
+                android:background="#232A34">
+
+
+
+                <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Dates"
+                    android:textColor="#fff"
+                    />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="right"
+                    android:background="@drawable/ic_arrows_right"/>
+
+
+
+
+                <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                    android:layout_width="match_parent"
+                    android:id="@+id/date_text"
+                    android:layout_height="wrap_content"
+                    android:text="Friday 14 - Monday 18"
+                    android:textColor="#5D616A" />
+
+                <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/room_price"
+                    android:layout_marginTop="3dp"
+                    android:layout_gravity="right"
+                    android:gravity="right"
+                    android:textSize="18dp"
+                    android:textColor="#fff"
+                    />
+
+            </LinearLayout>
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="0.1dp"
+                android:layout_marginRight="35dp"
+                android:layout_marginLeft="25dp"
+                android:background="#393D46"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="#2c3039">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:id="@+id/room_add_layout">
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+
+
+                    <Button
+                        android:layout_width="100dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="right"
+                        android:text="Add Room"
+                        android:id="@+id/add_room"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:textColor="#fff"
+                        android:background="@drawable/button_background"/>
+
+                </LinearLayout>
+
+                <!--       <View
+                           android:layout_width="wrap_content"
+                           android:layout_height="0.1dp"
+                           android:layout_marginRight="35dp"
+                           android:layout_marginLeft="25dp"
+                           android:background="#393D46"
+                           />
+
+                       <View
+                           android:layout_width="match_parent"
+                           android:layout_height="0.1dp"
+                           android:layout_marginLeft="25dp"
+                           android:layout_marginRight="35dp"
+                           android:background="#393D46"
+                           />-->
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:orientation="vertical"
+                    android:background="#2C3039"
+                    >
+
+                    <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded1"
+                        android:id="@+id/book_category_text"
+                        android:text="Book"
+                        android:textColor="#fff"
+                        android:textSize="16dp"
+                        android:textAlignment="center"
+                        android:layout_marginLeft="80dp"
+                        android:layout_marginRight="80dp"
+                        android:layout_marginTop="20dp"
+                        android:padding="15dp"/>
+
+
+
+
+                </LinearLayout>
+
+
+
+
+
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</FrameLayout>

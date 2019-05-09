@@ -1,0 +1,1400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".UI.Activities.RestaurantMenuScreen">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="3dp"
+            app:cardCornerRadius="0dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:id="@+id/category_image"
+                        android:src="@drawable/no_image"
+                        android:scaleType="fitXY"
+                        />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="2dp"
+                            android:paddingBottom="2dp"
+                            android:id="@+id/dis_sell"
+                            android:paddingRight="5dp"
+                            android:text="Save ₹ 100"
+                            android:visibility="gone"
+                            android:layout_gravity="right"
+                            android:background="#FF0000"
+                            android:textSize="16dp"
+                            android:textColor="#fff"
+                            android:layout_marginLeft="16dp"
+                            />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_weight="1">
+
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_weight="1"
+                                android:layout_gravity="bottom"
+                                android:layout_marginBottom="30dp">
+
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingLeft="5dp"
+                                    android:paddingTop="2dp"
+                                    android:paddingBottom="2dp"
+                                    android:id="@+id/category_name"
+                                    android:paddingRight="5dp"
+                                    android:text=""
+                                    android:background="@drawable/round_grey"
+                                    android:textSize="18dp"
+                                    android:textColor="#fff"
+                                    android:layout_marginLeft="16dp"
+                                    />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingLeft="5dp"
+                                    android:paddingTop="2dp"
+                                    android:visibility="gone"
+                                    android:paddingBottom="2dp"
+                                    android:id="@+id/image_url"
+                                    android:paddingRight="5dp"
+                                    android:text=""
+                                    android:background="@drawable/round_grey"
+                                    android:textSize="18dp"
+                                    android:textColor="#fff"
+                                    android:layout_marginLeft="16dp"
+                                    />
+
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom|right"
+                                android:visibility="gone"
+                                android:background="@drawable/round_grey"
+                                android:orientation="vertical">
+
+
+                                <TextView
+                                    android:id="@+id/room_price_dis"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="right"
+                                    android:layout_marginLeft="16dp"
+                                    android:paddingLeft="5dp"
+                                    android:paddingTop="2dp"
+                                    android:paddingRight="5dp"
+                                    android:paddingBottom="2dp"
+
+                                    android:text="₹ 499"
+                                    android:textColor="#fff"
+                                    android:textSize="22dp" />
+
+                                <TextView
+                                    android:id="@+id/room_price_dis_sell"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="right"
+
+                                    android:layout_marginLeft="16dp"
+                                    android:background="@drawable/text_striker"
+                                    android:paddingLeft="5dp"
+                                    android:paddingTop="2dp"
+                                    android:paddingRight="5dp"
+
+                                    android:text="₹ 799"
+                                    android:textColor="#fff"
+                                    android:textSize="16dp" />
+
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+
+                </FrameLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="5dp">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="left|center_horizontal"
+                        android:layout_gravity="left|center_horizontal"
+                        android:layout_weight="5"
+                        android:paddingLeft="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:id="@+id/description"
+                            android:textSize="16dp"
+                            android:textColor="@color/txt_color_black"
+                            />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:padding="10dp">
+                                        <ImageView
+                                            android:layout_width="200dp"
+                                            android:layout_height="125dp"
+                                            android:id="@+id/select_room_image"
+                                            android:src="@drawable/buffet_img"
+                                            />
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical"
+                                            android:paddingLeft="10dp"
+                                            >
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:textSize="18sp"
+                                                android:text="Buffet"
+                                                android:textStyle="bold"
+                                                android:textColor="#000"
+                                                android:id="@+id/select_room_category_type"
+                                                />
+
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="vertical"
+                                                android:layout_marginTop="10dp">
+
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:textSize="18sp"
+                                                    android:text="Rs 499/-"
+                                                    android:textStyle="bold"
+                                                    android:layout_weight="1"
+                                                    android:gravity="left"
+                                                    android:textColor="@color/colorPrimary"
+                                                    android:id="@+id/select_room_sell_rate"
+                                                    />
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:textSize="12sp"
+                                                    android:text="Rs 799/-"
+                                                    android:layout_weight="1"
+                                                    android:gravity="left"
+                                                    android:background="@drawable/text_striker"
+                                                    android:id="@+id/select_room_display_rate"
+                                                    />
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:textSize="12sp"
+                                                    android:text=""
+                                                    android:layout_weight="1"
+                                                    android:gravity="left"
+
+                                                    android:id="@+id/select_room_discount"
+                                                    />
+                                            </LinearLayout>
+
+                                        </LinearLayout>
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="right"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Show menu"
+                                            android:id="@+id/show_menu"
+                                            android:layout_weight="1"
+
+                                            android:gravity="center_vertical"
+                                            android:layout_gravity="center_vertical"
+
+                                            android:textSize="16dp"
+                                            android:textColor="@color/colorPrimaryDark"
+                                            />
+
+                                        <Button
+                                            android:layout_width="100dp"
+                                            android:layout_height="30dp"
+                                            android:layout_gravity="right"
+                                            android:text="Book Now"
+                                            android:id="@+id/book_mennu"
+                                            android:layout_marginRight="5dp"
+                                            android:layout_marginBottom="5dp"
+                                            android:textColor="#fff"
+                                            android:background="@drawable/button_background"/>
+
+                                    </LinearLayout>
+                                   <LinearLayout
+                                       android:layout_width="match_parent"
+                                       android:layout_height="wrap_content"
+                                       android:id="@+id/buffet_menu"
+                                       android:visibility="gone"
+                                       android:orientation="vertical">
+                                       <LinearLayout
+                                           android:orientation="vertical"
+                                           android:layout_width="match_parent"
+
+                                           android:layout_height="wrap_content">
+
+
+                                           <LinearLayout
+                                               android:layout_width="match_parent"
+                                               android:layout_height="50dp"
+                                               android:orientation="horizontal">
+
+                                               <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:layout_gravity="center_vertical|start"
+                                                   android:layout_weight="3"
+                                                   android:textSize="18sp"
+                                                   android:textColor="@color/colorPrimaryDark"
+                                                   android:layout_margin="5dp"
+                                                   android:text="Soup"
+                                                   />
+
+                                               <ImageView
+                                                   android:layout_width="15dp"
+                                                   android:layout_height="15dp"
+                                                   android:layout_gravity="right|center_vertical"
+                                                   android:layout_margin="2dp"
+                                                   android:visibility="gone"
+                                                   android:background="@drawable/ic_arrows_right"/>
+
+
+
+                                           </LinearLayout>
+
+
+                                           <LinearLayout
+                                               android:layout_width="match_parent"
+                                               android:layout_height="wrap_content"
+
+                                               android:orientation="vertical">
+
+                                               <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:text="Hot &amp; Sour Chicken Soup "
+                                                   android:layout_margin="5dp"
+                                                   android:textColor="@color/colorPrimary"
+                                                   />
+
+                                               <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:text="Sweet corn Veg soup"
+                                                   android:layout_marginLeft="5dp"
+                                                   android:textColor="@color/colorPrimary"
+                                                   />
+
+
+                                           </LinearLayout>
+
+
+
+
+
+
+                                       </LinearLayout>
+                                       <LinearLayout
+                                           android:orientation="vertical"
+                                           android:layout_width="match_parent"
+
+                                           android:layout_height="wrap_content">
+
+
+                                           <LinearLayout
+                                               android:layout_width="match_parent"
+                                               android:layout_height="50dp"
+                                               android:orientation="horizontal">
+
+                                               <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:layout_gravity="center_vertical|start"
+                                                   android:layout_weight="3"
+                                                   android:textSize="18sp"
+                                                   android:textColor="@color/colorPrimaryDark"
+                                                   android:layout_margin="5dp"
+                                                   android:text="SALAD"
+                                                   />
+
+                                               <ImageView
+                                                   android:layout_width="15dp"
+                                                   android:layout_height="15dp"
+                                                   android:layout_gravity="right|center_vertical"
+                                                   android:layout_margin="2dp"
+                                                   android:visibility="gone"
+                                                   android:background="@drawable/ic_arrows_right"/>
+
+
+
+                                           </LinearLayout>
+
+
+                                           <LinearLayout
+                                               android:layout_width="match_parent"
+                                               android:layout_height="wrap_content"
+
+                                               android:orientation="vertical">
+
+                                               <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:text="Chef choice Salad 4 No "
+                                                   android:layout_margin="5dp"
+                                                   android:textColor="@color/colorPrimary"
+                                                   />
+
+
+
+
+                                           </LinearLayout>
+
+
+
+
+
+
+                                       </LinearLayout>
+
+                                       <LinearLayout
+                                           android:orientation="vertical"
+                                           android:layout_width="match_parent"
+
+                                           android:layout_height="wrap_content">
+
+
+                                           <LinearLayout
+                                               android:layout_width="match_parent"
+                                               android:layout_height="50dp"
+                                               android:orientation="horizontal">
+
+                                               <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:layout_gravity="center_vertical|start"
+                                                   android:layout_weight="3"
+                                                   android:textSize="18sp"
+                                                   android:textColor="@color/colorPrimaryDark"
+                                                   android:layout_margin="5dp"
+                                                   android:text="NON-VEG STARTER"
+                                                   />
+
+                                               <ImageView
+                                                   android:layout_width="15dp"
+                                                   android:layout_height="15dp"
+                                                   android:layout_gravity="right|center_vertical"
+                                                   android:layout_margin="2dp"
+                                                   android:visibility="gone"
+                                                   android:background="@drawable/ic_arrows_right"/>
+
+
+
+                                           </LinearLayout>
+
+
+                                           <LinearLayout
+                                               android:layout_width="match_parent"
+                                               android:layout_height="wrap_content"
+
+                                               android:orientation="vertical">
+
+                                               <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:text="Chicken tikka"
+                                                   android:layout_margin="5dp"
+                                                   android:textColor="@color/colorPrimary"
+                                                   />
+
+                                               <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:text=" Tawa fish fry(Katla)"
+                                                   android:layout_marginLeft="5dp"
+                                                   android:textColor="@color/colorPrimary"
+                                                   />
+
+
+                                           </LinearLayout>
+
+
+
+
+
+
+                                       </LinearLayout>
+
+                                       <LinearLayout
+                                           android:orientation="vertical"
+                                           android:layout_width="match_parent"
+
+                                           android:layout_height="wrap_content">
+
+
+                                           <LinearLayout
+                                               android:layout_width="match_parent"
+                                               android:layout_height="50dp"
+                                               android:orientation="horizontal">
+
+                                               <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:layout_gravity="center_vertical|start"
+                                                   android:layout_weight="3"
+                                                   android:textSize="18sp"
+                                                   android:textColor="@color/colorPrimaryDark"
+                                                   android:layout_margin="5dp"
+                                                   android:text="VEG STARTER"
+                                                   />
+
+                                               <ImageView
+                                                   android:layout_width="15dp"
+                                                   android:layout_height="15dp"
+                                                   android:layout_gravity="right|center_vertical"
+                                                   android:layout_margin="2dp"
+                                                   android:visibility="gone"
+                                                   android:background="@drawable/ic_arrows_right"/>
+
+
+
+                                           </LinearLayout>
+
+
+                                           <LinearLayout
+                                               android:layout_width="match_parent"
+                                               android:layout_height="wrap_content"
+
+                                               android:orientation="vertical">
+
+                                               <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:text="Baby corn Manchurian"
+                                                   android:layout_margin="5dp"
+                                                   android:textColor="@color/colorPrimary"
+                                                   />
+
+                                               <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:text="Hara bara kebab"
+                                                   android:layout_marginLeft="5dp"
+                                                   android:textColor="@color/colorPrimary"
+                                                   />
+
+
+                                           </LinearLayout>
+
+
+
+
+
+
+                                       </LinearLayout>
+
+                                       <LinearLayout
+                                           android:orientation="vertical"
+                                           android:layout_width="match_parent"
+
+                                           android:layout_height="wrap_content">
+
+
+                                           <LinearLayout
+                                               android:layout_width="match_parent"
+                                               android:layout_height="50dp"
+                                               android:orientation="horizontal">
+
+                                               <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:layout_gravity="center_vertical|start"
+                                                   android:layout_weight="3"
+                                                   android:textSize="18sp"
+                                                   android:textColor="@color/colorPrimaryDark"
+                                                   android:layout_margin="5dp"
+                                                   android:text="NON-VEG MAN COURSE"
+                                                   />
+
+                                               <ImageView
+                                                   android:layout_width="15dp"
+                                                   android:layout_height="15dp"
+                                                   android:layout_gravity="right|center_vertical"
+                                                   android:layout_margin="2dp"
+                                                   android:visibility="gone"
+                                                   android:background="@drawable/ic_arrows_right"/>
+
+
+
+                                           </LinearLayout>
+
+
+                                           <LinearLayout
+                                               android:layout_width="match_parent"
+                                               android:layout_height="wrap_content"
+
+                                               android:orientation="vertical">
+
+                                               <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:text="Chicken Briyaani "
+                                                   android:layout_margin="5dp"
+                                                   android:textColor="@color/colorPrimary"
+                                                   />
+
+                                               <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:text="Murg Rogan"
+                                                   android:layout_marginLeft="5dp"
+                                                   android:textColor="@color/colorPrimary"
+                                                   />
+
+
+                                           </LinearLayout>
+
+
+
+
+
+
+                                       </LinearLayout>
+
+                                       <LinearLayout
+                                           android:orientation="vertical"
+                                           android:layout_width="match_parent"
+
+                                           android:layout_height="wrap_content">
+
+
+                                           <LinearLayout
+                                               android:layout_width="match_parent"
+                                               android:layout_height="50dp"
+                                               android:orientation="horizontal">
+
+                                               <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:layout_gravity="center_vertical|start"
+                                                   android:layout_weight="3"
+                                                   android:textSize="18sp"
+                                                   android:textColor="@color/colorPrimaryDark"
+                                                   android:layout_margin="5dp"
+                                                   android:text="VEG MAIN COURSE"
+                                                   />
+
+                                               <ImageView
+                                                   android:layout_width="15dp"
+                                                   android:layout_height="15dp"
+                                                   android:layout_gravity="right|center_vertical"
+                                                   android:layout_margin="2dp"
+                                                   android:visibility="gone"
+                                                   android:background="@drawable/ic_arrows_right"/>
+
+
+
+                                           </LinearLayout>
+
+
+                                           <LinearLayout
+                                               android:layout_width="match_parent"
+                                               android:layout_height="wrap_content"
+
+                                               android:orientation="vertical">
+
+                                               <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:text="Paneer makhani"
+                                                   android:layout_margin="5dp"
+                                                   android:textColor="@color/colorPrimary"
+                                                   />
+
+                                               <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:text="Veg Kolhapur"
+                                                   android:layout_marginLeft="5dp"
+                                                   android:textColor="@color/colorPrimary"
+                                                   />
+
+                                               <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:text="Gobi chilli"
+                                                   android:layout_marginLeft="5dp"
+                                                   android:textColor="@color/colorPrimary"
+                                                   />
+
+                                               <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:text="Pesa pulao"
+                                                   android:layout_marginLeft="5dp"
+                                                   android:textColor="@color/colorPrimary"
+                                                   />
+
+                                               <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:text="Dal tadka"
+                                                   android:layout_marginLeft="5dp"
+                                                   android:textColor="@color/colorPrimary"
+                                                   />
+                                               <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:text="Veg noodles"
+                                                   android:layout_marginLeft="5dp"
+                                                   android:textColor="@color/colorPrimary"
+                                                   />
+                                               <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:text="Steamed rice"
+                                                   android:layout_marginLeft="5dp"
+                                                   android:textColor="@color/colorPrimary"
+                                                   />
+
+                                               <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:text="Papad"
+                                                   android:layout_marginLeft="5dp"
+                                                   android:textColor="@color/colorPrimary"
+                                                   />
+
+                                               <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:text="Pickle"
+                                                   android:layout_marginLeft="5dp"
+                                                   android:textColor="@color/colorPrimary"
+                                                   />
+
+                                               <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:text="Curd"
+                                                   android:layout_marginLeft="5dp"
+                                                   android:textColor="@color/colorPrimary"
+                                                   />
+
+                                               <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:text="Raitha"
+                                                   android:layout_marginLeft="5dp"
+                                                   android:textColor="@color/colorPrimary"
+                                                   />
+
+                                               <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:text="Rasam"
+                                                   android:layout_marginLeft="5dp"
+                                                   android:textColor="@color/colorPrimary"
+                                                   />
+
+
+                                           </LinearLayout>
+
+
+
+
+
+
+                                       </LinearLayout>
+
+                                       <LinearLayout
+                                           android:orientation="vertical"
+                                           android:layout_width="match_parent"
+
+                                           android:layout_height="wrap_content">
+
+
+                                           <LinearLayout
+                                               android:layout_width="match_parent"
+                                               android:layout_height="50dp"
+                                               android:orientation="horizontal">
+
+                                               <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:layout_gravity="center_vertical|start"
+                                                   android:layout_weight="3"
+                                                   android:textSize="18sp"
+                                                   android:textColor="@color/colorPrimaryDark"
+                                                   android:layout_margin="5dp"
+                                                   android:text="INDIAN BREAD"
+                                                   />
+
+                                               <ImageView
+                                                   android:layout_width="15dp"
+                                                   android:layout_height="15dp"
+                                                   android:layout_gravity="right|center_vertical"
+                                                   android:layout_margin="2dp"
+                                                   android:visibility="gone"
+                                                   android:background="@drawable/ic_arrows_right"/>
+
+
+
+                                           </LinearLayout>
+
+
+                                           <LinearLayout
+                                               android:layout_width="match_parent"
+                                               android:layout_height="wrap_content"
+
+                                               android:orientation="vertical">
+
+                                               <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:text="Roti,Naan "
+                                                   android:layout_margin="5dp"
+                                                   android:textColor="@color/colorPrimary"
+                                                   />
+
+                                               <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:text="Kulcha"
+                                                   android:layout_marginLeft="5dp"
+                                                   android:textColor="@color/colorPrimary"
+                                                   />
+
+
+                                           </LinearLayout>
+
+
+
+
+
+
+                                       </LinearLayout>
+
+                                       <LinearLayout
+                                           android:orientation="vertical"
+                                           android:layout_width="match_parent"
+
+                                           android:layout_height="wrap_content">
+
+
+                                           <LinearLayout
+                                               android:layout_width="match_parent"
+                                               android:layout_height="50dp"
+                                               android:orientation="horizontal">
+
+                                               <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:layout_gravity="center_vertical|start"
+                                                   android:layout_weight="3"
+                                                   android:textSize="18sp"
+                                                   android:textColor="@color/colorPrimaryDark"
+                                                   android:layout_margin="5dp"
+                                                   android:text="Dessert"
+                                                   />
+
+                                               <ImageView
+                                                   android:layout_width="15dp"
+                                                   android:layout_height="15dp"
+                                                   android:layout_gravity="right|center_vertical"
+                                                   android:layout_margin="2dp"
+                                                   android:visibility="gone"
+                                                   android:background="@drawable/ic_arrows_right"/>
+
+
+
+                                           </LinearLayout>
+
+
+                                           <LinearLayout
+                                               android:layout_width="match_parent"
+                                               android:layout_height="wrap_content"
+
+                                               android:orientation="vertical">
+
+                                               <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:text="Chef Choice Desserts 5 no"
+                                                   android:layout_margin="5dp"
+                                                   android:textColor="@color/colorPrimary"
+                                                   />
+
+
+
+                                           </LinearLayout>
+
+
+
+
+
+
+                                       </LinearLayout>
+                                   </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:padding="10dp">
+                                <ImageView
+                                    android:layout_width="200dp"
+                                    android:layout_height="125dp"
+                                    android:id="@+id/non_veg_box"
+                                    android:src="@drawable/non_veg"
+                                    />
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:paddingLeft="10dp"
+                                    >
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="18sp"
+                                        android:text="Non-Veg Lunch Box"
+                                        android:textStyle="bold"
+                                        android:textColor="#000"
+                                        android:id="@+id/non_veg_title"
+                                        />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"
+                                        android:layout_marginTop="10dp">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:textSize="18sp"
+                                            android:text="Rs 250/-"
+                                            android:textStyle="bold"
+                                            android:layout_weight="1"
+                                            android:gravity="left"
+                                            android:textColor="@color/colorPrimary"
+                                            android:id="@+id/non_veg_sell"
+                                            />
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:textSize="12sp"
+                                            android:text="Rs 299/-"
+                                            android:layout_weight="1"
+                                            android:gravity="left"
+                                            android:background="@drawable/text_striker"
+                                            android:id="@+id/non_veg_display"
+                                            />
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:textSize="12sp"
+                                            android:text=""
+                                            android:layout_weight="1"
+                                            android:gravity="left"
+
+                                            android:id="@+id/non_veg_discount"
+                                            />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="right"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Show menu"
+                                    android:id="@+id/show_menu_non"
+                                    android:layout_weight="1"
+
+                                    android:gravity="center_vertical"
+                                    android:layout_gravity="center_vertical"
+
+                                    android:textSize="16dp"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    />
+
+                                <Button
+                                    android:layout_width="100dp"
+                                    android:layout_height="30dp"
+                                    android:layout_gravity="right"
+                                    android:text="Book Now"
+                                    android:id="@+id/book_mennu_non"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:textColor="#fff"
+                                    android:background="@drawable/button_background"/>
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/non_veg_menu"
+                                android:visibility="gone"
+                                android:orientation="vertical">
+                                <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="match_parent"
+
+                                    android:layout_height="wrap_content">
+
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="50dp"
+                                        android:visibility="gone"
+                                        android:orientation="horizontal">
+
+                                        <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center_vertical|start"
+                                            android:layout_weight="3"
+                                            android:textSize="18sp"
+                                            android:textColor="@color/colorPrimaryDark"
+                                            android:layout_margin="5dp"
+                                            android:text="Soup"
+                                            />
+
+                                        <ImageView
+                                            android:layout_width="15dp"
+                                            android:layout_height="15dp"
+                                            android:layout_gravity="right|center_vertical"
+                                            android:layout_margin="2dp"
+                                            android:visibility="gone"
+                                            android:background="@drawable/ic_arrows_right"/>
+
+
+
+                                    </LinearLayout>
+
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+
+                                        android:orientation="vertical">
+
+                                        <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Chicken Starter"
+                                            android:layout_margin="5dp"
+                                            android:textColor="@color/colorPrimary"
+                                            />
+
+                                        <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Chicken Gravy"
+                                            android:layout_marginLeft="5dp"
+                                            android:textColor="@color/colorPrimary"
+                                            />
+
+                                        <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Briyani Rice"
+                                            android:layout_margin="5dp"
+                                            android:textColor="@color/colorPrimary"
+                                            />
+
+                                        <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Dal"
+                                            android:layout_marginLeft="5dp"
+                                            android:textColor="@color/colorPrimary"
+                                            />
+
+
+
+                                        <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Raitha"
+                                            android:layout_marginLeft="5dp"
+                                            android:textColor="@color/colorPrimary"
+                                            />
+                                        <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Pulka or Chapati"
+                                            android:layout_margin="5dp"
+                                            android:textColor="@color/colorPrimary"
+                                            />
+
+                                        <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Pickle"
+                                            android:layout_marginLeft="5dp"
+                                            android:textColor="@color/colorPrimary"
+                                            />
+
+                                        <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Dessert"
+                                            android:layout_margin="5dp"
+                                            android:textColor="@color/colorPrimary"
+                                            />
+
+
+                                    </LinearLayout>
+
+
+
+
+
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:padding="10dp">
+                                <ImageView
+                                    android:layout_width="200dp"
+                                    android:layout_height="125dp"
+                                    android:id="@+id/veg_box"
+                                    android:src="@drawable/veg_lunch"
+                                    />
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:paddingLeft="10dp"
+                                    >
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="18sp"
+                                        android:text="Veg Lunch Box"
+                                        android:textStyle="bold"
+                                        android:textColor="#000"
+                                        android:id="@+id/veg_title"
+                                        />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"
+                                        android:layout_marginTop="10dp">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:textSize="18sp"
+                                            android:text="Rs 210/-"
+                                            android:textStyle="bold"
+                                            android:layout_weight="1"
+                                            android:gravity="left"
+                                            android:textColor="@color/colorPrimary"
+                                            android:id="@+id/veg_sell"
+                                            />
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:textSize="12sp"
+                                            android:text="Rs 249/-"
+                                            android:layout_weight="1"
+                                            android:gravity="left"
+                                            android:background="@drawable/text_striker"
+                                            android:id="@+id/veg_display"
+                                            />
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:textSize="12sp"
+                                            android:text=""
+                                            android:layout_weight="1"
+                                            android:gravity="left"
+
+                                            android:id="@+id/veg_discount"
+                                            />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="right"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Show menu"
+                                    android:id="@+id/show_menu_veg"
+                                    android:layout_weight="1"
+
+                                    android:gravity="center_vertical"
+                                    android:layout_gravity="center_vertical"
+
+                                    android:textSize="16dp"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    />
+
+                                <Button
+                                    android:layout_width="100dp"
+                                    android:layout_height="30dp"
+                                    android:layout_gravity="right"
+                                    android:text="Book Now"
+                                    android:id="@+id/book_mennu_veg"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:textColor="#fff"
+                                    android:background="@drawable/button_background"/>
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/veg_menu"
+                                android:visibility="gone"
+                                android:orientation="vertical">
+                                <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="match_parent"
+
+                                    android:layout_height="wrap_content">
+
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="50dp"
+                                        android:visibility="gone"
+                                        android:orientation="horizontal">
+
+                                        <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center_vertical|start"
+                                            android:layout_weight="3"
+                                            android:textSize="18sp"
+                                            android:textColor="@color/colorPrimaryDark"
+                                            android:layout_margin="5dp"
+                                            android:text="Soup"
+                                            />
+
+                                        <ImageView
+                                            android:layout_width="15dp"
+                                            android:layout_height="15dp"
+                                            android:layout_gravity="right|center_vertical"
+                                            android:layout_margin="2dp"
+                                            android:visibility="gone"
+                                            android:background="@drawable/ic_arrows_right"/>
+
+
+
+                                    </LinearLayout>
+
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+
+                                        android:orientation="vertical">
+
+                                        <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Veg Starter"
+                                            android:layout_margin="5dp"
+                                            android:textColor="@color/colorPrimary"
+                                            />
+
+                                        <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Veg Gravy"
+                                            android:layout_marginLeft="5dp"
+                                            android:textColor="@color/colorPrimary"
+                                            />
+
+                                        <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Veg Pulavo"
+                                            android:layout_margin="5dp"
+                                            android:textColor="@color/colorPrimary"
+                                            />
+
+                                        <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Dal"
+                                            android:layout_marginLeft="5dp"
+                                            android:textColor="@color/colorPrimary"
+                                            />
+
+
+
+                                        <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Raitha"
+                                            android:layout_marginLeft="5dp"
+                                            android:textColor="@color/colorPrimary"
+                                            />
+                                        <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Pulka or Chapati"
+                                            android:layout_margin="5dp"
+                                            android:textColor="@color/colorPrimary"
+                                            />
+
+                                        <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Pickle"
+                                            android:layout_marginLeft="5dp"
+                                            android:textColor="@color/colorPrimary"
+                                            />
+
+                                        <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Dessert"
+                                            android:layout_margin="5dp"
+                                            android:textColor="@color/colorPrimary"
+                                            />
+
+
+                                    </LinearLayout>
+
+
+
+
+
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+
+</ScrollView>

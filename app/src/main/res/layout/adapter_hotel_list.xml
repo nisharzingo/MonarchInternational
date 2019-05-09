@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="15dp"
+    android:id="@+id/base_hotel_layout"
+    android:background="#232A34">
+    <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/adapter_hotel_name"
+        android:text=""
+        android:textColor="@color/colorPrimary"
+        />
+
+    <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/adapter_hotel_location"
+        android:text=""
+        android:textColor="#5D616A" />
+
+</LinearLayout>
