@@ -1,323 +1,391 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@drawable/hotel2"
-    android:fitsSystemWindows="true"
+    android:fillViewport="true"
+    android:background="@drawable/sea_opt">
 
-    >
-
-    <FrameLayout
+    <LinearLayout
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#98000000" />
-
-        <ScrollView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fillViewport="true"
-            android:scrollbars="none"
-            android:fitsSystemWindows="true"
-            >
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/hotel_logo"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:focusableInTouchMode="true"
-                android:gravity="center"
-                android:fitsSystemWindows="true"
-                android:orientation="vertical"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-                >
-
-                <TextView
-                    android:id="@+id/left_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="50dp"
-                    android:alpha="50"
-                    android:gravity="center"
-                    android:text="Join Us"
-                    android:textColor="#ffffff"
-                    android:textSize="30dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginTop="5dp"
-                    android:alpha="50"
-                    android:gravity="center"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="10dp"
-                    android:text="Enjoy your stay"
-                    android:textColor="#ffffff"
-                    android:textSize="18dp"
-                    android:textStyle="normal"
-
-                    />
-
-
-                <LinearLayout
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/ic_user"/>
+                <customfonts.MyEditText
+                    android:id="@+id/fullname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:orientation="vertical"
-                    android:paddingLeft="30dp"
-                    android:paddingRight="30dp">
+                    android:inputType="text"
+                    android:textColor="#fff"
+                    android:hint="Full Name"
+                    android:letterSpacing="0.025"
+                    android:background="#00000000"
+                    android:textColorHint="#fff"
+                    android:textSize="16dp"
+                    android:padding="12dp"/>
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:background="#fff"/>
+
+            <LinearLayout
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/personal_layout"
+                    android:layout_width="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
                     <RadioGroup
                         android:layout_width="match_parent"
                         android:layout_height="30dp"
                         android:layout_gravity="center"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:gravity="center"
-                        android:orientation="horizontal"
-                        android:visibility="gone">
-
-                        <RadioButton
-                            android:id="@+id/sign_up_mr"
-                            android:layout_width="70dp"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/radio_btn_selector"
-                            android:button="@drawable/editext_border"
-                            android:gravity="center"
-                            android:text="Mr"
-                            android:textColor="@drawable/rbtn_textcolor_selector"
-                            android:textSize="16sp" />
-
-                        <RadioButton
-                            android:id="@+id/sign_up_mrs"
-                            android:layout_width="70dp"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/radio_btn_selector"
-                            android:button="@drawable/editext_border"
-                            android:gravity="center"
-                            android:text="Mrs"
-                            android:textColor="@drawable/rbtn_textcolor_selector"
-                            android:textSize="16sp" />
-
-                        <RadioButton
-                            android:id="@+id/sign_up_ms"
-                            android:layout_width="70dp"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/radio_btn_selector"
-                            android:button="@drawable/editext_border"
-                            android:gravity="center"
-                            android:text="Ms"
-                            android:textColor="@drawable/rbtn_textcolor_selector"
-                            android:textSize="16sp" />
-                    </RadioGroup>
-
-                    <details.hotel.app.monarchint.Customs.CustomFonts.EditText_Roboto_Regular
-                        android:id="@+id/first_name"
-                        android:layout_width="match_parent"
-                        android:layout_height="35dp"
-
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="@drawable/test_background"
-                        android:hint="Full Name"
-                        android:singleLine="true"
-                        android:textSize="18dp"
-                        android:textColor="#ffffff"
-                        android:textColorHint="#afaeae"
-                         />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
                         android:gravity="center"
                         android:orientation="horizontal">
 
-                        <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
-                            android:layout_width="wrap_content"
+                        <TextView
+                            android:layout_marginRight="5dp"
+                            android:layout_width="75dp"
                             android:layout_height="match_parent"
                             android:gravity="center"
-                            android:text="GENDER"
-                            android:textColor="#ffffff"
-                             />
-                        <RadioGroup
-                            android:layout_width="match_parent"
-                            android:layout_height="30dp"
-                            android:layout_gravity="center"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginRight="10dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="10dp"
+                            android:text="Gender "
+                            android:textColor="@color/White"
+                            android:textSize="16sp" />
+
+                        <RadioButton
+                            android:id="@+id/male"
+                            android:layout_width="75dp"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/radio_btn_gender_selecter"
+                            android:button="@drawable/border"
                             android:gravity="center"
-                            android:orientation="horizontal">
-
-                            <RadioButton
-                                android:id="@+id/profile_male"
-                                android:layout_width="70dp"
-                                android:layout_height="match_parent"
-                                android:background="@drawable/radio_button_signup"
-                                android:button="@drawable/editext_border"
-                                android:gravity="center"
-                                android:text="Male"
-                                android:textColor="#FFFFFF"
-                                android:textSize="16sp" />
-
-                            <RadioButton
-                                android:id="@+id/profile_female"
-                                android:layout_width="70dp"
-                                android:layout_height="match_parent"
-                                android:background="@drawable/radio_button_signup"
-                                android:button="@drawable/editext_border"
-                                android:gravity="center"
-
-                                android:text="Female"
-                                android:textColor="#FFFFFF"
-                                android:textSize="16sp" />
-
-                            <RadioButton
-                                android:id="@+id/profile_transgender"
-                                android:layout_width="70dp"
-                                android:layout_height="match_parent"
-                                android:background="@drawable/radio_button_signup"
-                                android:button="@drawable/editext_border"
-                                android:gravity="center"
-                                android:text="Other"
-                                android:textColor="#FFFFFF"
-                                android:textSize="16sp"
-
-                                />
-                        </RadioGroup>
-                    </LinearLayout>
+                            android:text="Male"
+                            android:textColor="@color/White"
+                            android:textSize="16sp" />
 
 
+                        <RadioButton
+                            android:id="@+id/female"
+                            android:layout_width="75dp"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/radio_btn_gender_selecter"
+                            android:button="@drawable/border"
+                            android:gravity="center"
+                            android:text="Female"
+                            android:textColor="@color/White"
+                            android:textSize="16sp" />
 
-                    <details.hotel.app.monarchint.Customs.CustomFonts.EditText_Roboto_Regular
-                        android:id="@+id/user_name_profile"
-                        android:layout_width="match_parent"
-                        android:layout_height="35dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:background="@drawable/test_background"
-                        android:hint="User Name"
-                        android:textSize="18dp"
-                        android:singleLine="true"
-                        android:textColor="#ffffff"
-                        android:textColorHint="#afaeae"
-                          />
 
-                    <details.hotel.app.monarchint.Customs.CustomFonts.EditText_Roboto_Regular
-                        android:id="@+id/phone_no"
-                        android:layout_width="match_parent"
-                        android:layout_height="35dp"
-                        android:layout_margin="10dp"
-                        android:background="@drawable/test_background"
-                        android:drawablePadding="10dp"
-                        android:hint="Phone Number"
-                        android:inputType="number"
-                        android:singleLine="true"
-                        android:textSize="18dp"
-                        android:textColor="#fff"
-                        android:textColorHint="#afaeae"
-                        
+                        <RadioButton
+                            android:id="@+id/other"
+                            android:layout_width="75dp"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/radio_btn_gender_selecter"
+                            android:button="@drawable/border"
+                            android:gravity="center"
+                            android:text="Other"
+                            android:textColor="@color/White"
+                            android:textSize="16sp" />
 
-                        />
+                    </RadioGroup>
 
-                    <details.hotel.app.monarchint.Customs.CustomFonts.EditText_Roboto_Regular
-                        android:id="@+id/email_id_profile"
-                        android:layout_width="match_parent"
-                        android:layout_height="35dp"
-                        android:layout_margin="10dp"
-                        android:textSize="18dp"
-                        android:background="@drawable/test_background"
-                        android:drawablePadding="10dp"
-                        android:hint="Email"
-                        android:inputType="textEmailAddress"
-                        android:singleLine="true"
-                        android:textColor="#fff"
-                        android:textColorHint="#afaeae"
-                          />
-
-                    <details.hotel.app.monarchint.Customs.CustomFonts.EditText_Roboto_Regular
-                        android:id="@+id/password"
-                        android:layout_width="match_parent"
-
-                        android:textSize="18dp"
-                        android:layout_height="35dp"
-                        android:layout_margin="10dp"
-                        android:background="@drawable/test_background"
-                        android:drawablePadding="10dp"
-                        android:hint="Password"
-                        android:inputType="textPassword"
-                        android:singleLine="true"
-                        android:textColor="#fff"
-                        android:textColorHint="#afaeae"
-                          />
-
-                    <details.hotel.app.monarchint.Customs.CustomFonts.EditText_Roboto_Regular
-                        android:id="@+id/confirm_password"
-                        android:layout_width="match_parent"
-                        android:layout_height="35dp"
-                        android:layout_margin="10dp"
-                        android:background="@drawable/test_background"
-                        android:drawablePadding="10dp"
-                        android:hint="Confirm Password"
-                        android:inputType="textPassword"
-                        android:singleLine="true"
-                        android:textColor="#fff"
-                        android:textSize="18dp"
-                        android:textColorHint="#afaeae"
-                        
-
-                        />
-
-                    <details.hotel.app.monarchint.Customs.CustomFonts.EditText_Roboto_Regular
-                        android:id="@+id/refer_code"
-                        android:layout_width="match_parent"
-                        android:layout_height="35dp"
-                        android:layout_margin="10dp"
-                        android:background="@drawable/test_background"
-                        android:drawablePadding="10dp"
-                        android:hint="Referal Code(Optional)"
-                        android:inputType="text"
-                        android:singleLine="true"
-                        android:textColor="#fff"
-                        android:textSize="18dp"
-                        android:textColorHint="#afaeae"
-                        
-
-                        />
-
-                    <details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular
-                        android:id="@+id/submit_profile"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="15dp"
-                        android:background="@drawable/button_background_two"
-                        android:gravity="center"
-                        android:text="SIGN UP"
-                        android:textColor="#ffffff"
-                         />
                 </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/ic_user"/>
+                <customfonts.MyEditText
+                    android:id="@+id/username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:textColor="#fff"
+                    android:hint="User Name"
+                    android:letterSpacing="0.025"
+                    android:background="#00000000"
+                    android:textColorHint="#fff"
+                    android:textSize="16dp"
+                    android:padding="12dp"/>
 
             </LinearLayout>
-        </ScrollView>
-    </FrameLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:background="#fff"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/ic_phone_iphone_black_24dp"/>
+                <customfonts.MyEditText
+                    android:id="@+id/phone_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:textColor="#fff"
+                    android:hint="Phone Number"
+                    android:letterSpacing="0.025"
+                    android:background="#00000000"
+                    android:textColorHint="#fff"
+                    android:textSize="16dp"
+                    android:padding="12dp"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:background="#fff"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/ic_mail_outline_black_24dp"/>
+                <customfonts.MyEditText
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:textColor="#fff"
+                    android:hint="Email"
+                    android:letterSpacing="0.025"
+                    android:background="#00000000"
+                    android:textColorHint="#fff"
+                    android:textSize="16dp"
+                    android:padding="12dp"/>
+
+            </LinearLayout>
 
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:background="#fff"/>
 
-</RelativeLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
 
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/ic_password"/>
+                <customfonts.MyEditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:textColor="#fff"
+                    android:hint="Password"
+                    android:letterSpacing="0.025"
+                    android:background="#00000000"
+                    android:textColorHint="#fff"
+                    android:textSize="16dp"
+                    android:padding="12dp"/>
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:background="#fff"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/ic_password"/>
+                <customfonts.MyEditText
+                    android:id="@+id/con_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:textColor="#fff"
+                    android:hint="Confirm Password"
+                    android:letterSpacing="0.025"
+                    android:background="#00000000"
+                    android:textColorHint="#fff"
+                    android:textSize="16dp"
+                    android:padding="12dp"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:background="#fff"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="15dp" />
+                <customfonts.MyEditText
+                    android:id="@+id/referal_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:textColor="#fff"
+                    android:hint="Referal Code(Option)"
+                    android:letterSpacing="0.025"
+                    android:background="#00000000"
+                    android:textColorHint="#fff"
+                    android:textSize="16dp"
+                    android:padding="12dp"/>
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:background="#fff"/>
+
+        </LinearLayout>
+
+        <customfonts.MyTextView
+            android:id="@+id/signup"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:text="Sign Up"
+            android:textSize="16dp"
+            android:textColor="#fff"
+            android:textAlignment="center"
+            android:background="@drawable/border"
+            android:layout_gravity="center"
+            android:letterSpacing="0.025"
+            android:padding="10dp"
+            android:layout_marginTop="60dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="30dp">
+
+            <customfonts.MyTextView
+                android:layout_margin="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Already have an account?"
+                android:textColor="#fff"
+                android:letterSpacing="0.025"
+                android:textSize="14dp" />
+
+            <customfonts.MyTextView
+                android:id="@+id/signin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sign in"
+                android:textSize="14dp"
+                android:textColor="#fff"
+                android:letterSpacing="0.025"
+                android:textStyle="bold"
+                android:layout_marginLeft="5dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

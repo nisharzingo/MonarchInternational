@@ -9,11 +9,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
-
 import java.util.ArrayList;
-
-import details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular;
+import customfonts.MyEditText;
+import customfonts.MyTextView;
 import details.hotel.app.monarchint.FireBase.SharedPrefManager;
 import details.hotel.app.monarchint.Model.DeviceMapping;
 import details.hotel.app.monarchint.Model.TravellerAgentProfiles;
@@ -31,8 +31,8 @@ import retrofit2.Response;
 
 public class LoginScreen extends AppCompatActivity {
 
-    EditText mUserName,mUserPwd;
-    TextViewRobotoregular mLogin,mSignUp;
+    MyEditText mUserName,mUserPwd;
+    MyTextView mLogin,mSignUp;
 
 
     public static final int MY_PERMISSIONS_REQUEST_RESULT = 1;
@@ -45,11 +45,11 @@ public class LoginScreen extends AppCompatActivity {
 
             setContentView(R.layout.activity_login_screen);
 
-            mUserName = (EditText)findViewById(R.id.login_username);
-            mUserPwd = (EditText)findViewById(R.id.login_password);
+            mUserName = (MyEditText)findViewById(R.id.signin_Username);
+            mUserPwd = (MyEditText)findViewById(R.id.signin_Password);
 
-            mLogin = (TextViewRobotoregular)findViewById(R.id.loginBtn);
-            mSignUp = (TextViewRobotoregular)findViewById(R.id.signBtn);
+            mLogin = (MyTextView)findViewById(R.id.signinBtn);
+            mSignUp = (MyTextView)findViewById(R.id.signupBtn);
 
             mSignUp.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -58,6 +58,7 @@ public class LoginScreen extends AppCompatActivity {
                     try {
                         Intent signUp = new Intent(LoginScreen.this,SignUpScreen.class);
                         startActivity(signUp);
+                        LoginScreen.this.finish();
 
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -74,13 +75,11 @@ public class LoginScreen extends AppCompatActivity {
 
                         Util.hideKeyboard(LoginScreen.this);
                         if (!mUserName.getText().toString().trim().isEmpty() && !mUserPwd.getText().toString().trim().isEmpty()) {
-
+                            validate();
                             TravellerAgentProfiles travellerAgentProfiles = new TravellerAgentProfiles();
                             travellerAgentProfiles.setUserName(mUserName.getText().toString());
                             travellerAgentProfiles.setPassword(mUserPwd.getText().toString());
                             login(travellerAgentProfiles);
-
-
                         }
                         else
                             Toast.makeText(LoginScreen.this, "Fields should not be empty", Toast.LENGTH_SHORT).show();
@@ -89,8 +88,6 @@ public class LoginScreen extends AppCompatActivity {
                     {
                         ex.printStackTrace();
                     }
-
-
                 }
             });
 
@@ -98,16 +95,30 @@ public class LoginScreen extends AppCompatActivity {
 
             e.printStackTrace();
         }
-
     }
 
+    private void validate()
+    {
+        String uname = mUserName.getText().toString();
+        String pass = mUserName.getText().toString();
+
+        if(uname == null || uname.isEmpty())
+        {
+            mUserName.setError(getResources().getString(R.string.user_name_validation_message));
+            mUserName.requestFocus();
+        }
+        else if(pass == null || pass.isEmpty())
+        {
+            mUserPwd.setError(getResources().getString(R.string.password_validation_message));
+            mUserPwd.requestFocus();
+        }
+    }
     private void login(final TravellerAgentProfiles travellerAgentProfiles) throws Exception{
 
         final ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Please wait..");
         progressDialog.setCancelable(false);
         progressDialog.show();
-
 
         new ThreadExecuter().execute(new Runnable() {
             @Override
@@ -116,7 +127,7 @@ public class LoginScreen extends AppCompatActivity {
                 try
                 {
                     AgentProfileAPI apiService = Util.getClient().create(AgentProfileAPI.class);
-                  //  String authenticationString = "Basic TW9obmlBdmQ6ODIyMDgxOTcwNg==";
+                    //  String authenticationString = "Basic TW9obmlBdmQ6ODIyMDgxOTcwNg==";
                     Call<ArrayList<TravellerAgentProfiles>> call = apiService.loginAgent(Constants.auth_string,travellerAgentProfiles);
 
                     call.enqueue(new Callback<ArrayList<TravellerAgentProfiles>>() {
@@ -155,16 +166,11 @@ public class LoginScreen extends AppCompatActivity {
                                         PreferenceHandler.getInstance(LoginScreen.this).setAgentPhoneNumber(dto.getPhoneNumber());
                                         PreferenceHandler.getInstance(LoginScreen.this).setAgentName(dto.getUserName());
 
-
-
                                         UserRole userRole = dto.getUserRoles();
                                         if(userRole != null)
                                         {
-
                                             PreferenceHandler.getInstance(LoginScreen.this).setUserRoleUniqueID(userRole.getUserRoleUniqueId());
                                         }
-
-
 
                                         String token = SharedPrefManager.getInstance(LoginScreen.this).getDeviceToken();
                                         System.out.println("token"+token);
@@ -176,7 +182,7 @@ public class LoginScreen extends AppCompatActivity {
                                             addDeviceId(hm);
                                         }else{
                                             Toast.makeText(LoginScreen.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                                            Intent intent = new Intent(LoginScreen.this, HotelOptionsScreen.class);
+                                            Intent intent = new Intent(LoginScreen.this, BaseActivity.class);
                                             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_SINGLE_TOP);
                                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );
                                             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -253,7 +259,7 @@ public class LoginScreen extends AppCompatActivity {
                                     if(hotelDetailseResponse != null)
                                     {
                                         Toast.makeText(LoginScreen.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(LoginScreen.this, HotelOptionsScreen.class);
+                                        Intent intent = new Intent(LoginScreen.this, BaseActivity.class);
                                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_SINGLE_TOP);
                                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );
                                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -267,7 +273,7 @@ public class LoginScreen extends AppCompatActivity {
                                 }else if(response.code() == 404){
                                     if(response.body()==null){
                                         Toast.makeText(LoginScreen.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(LoginScreen.this, HotelOptionsScreen.class);
+                                        Intent intent = new Intent(LoginScreen.this, BaseActivity.class);
                                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_SINGLE_TOP);
                                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );
                                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);

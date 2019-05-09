@@ -1,5 +1,4 @@
 package details.hotel.app.monarchint.UI.Activities;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -16,11 +15,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
-
 import java.util.ArrayList;
-
-import details.hotel.app.monarchint.Customs.CustomFonts.EditText_Roboto_Regular;
-import details.hotel.app.monarchint.Customs.CustomFonts.TextViewRobotoregular;
+import customfonts.MyEditText;
+import customfonts.MyTextView;
 import details.hotel.app.monarchint.Model.ReferCodeModel;
 import details.hotel.app.monarchint.Model.TravellerAgentProfiles;
 import details.hotel.app.monarchint.R;
@@ -34,27 +31,24 @@ import retrofit2.Response;
 
 public class SignUpScreen extends AppCompatActivity {
 
-    EditText_Roboto_Regular first_name,email_id,phone_no,user_name,password,confirm_password,refercode;//
+    MyEditText first_name,email_id,phone_no,user_name,password,confirm_password,refercode;//
     //private TextView city;
-    TextViewRobotoregular mGuest,mAgent;
+    MyTextView mGuest,mAgent;
     private RadioButton mProfileMale,mProfileFemale,mProfileOthers;
     private CardView password_card,confirm_password_card;
-    private TextViewRobotoregular submit;
+    private MyTextView submit,signIn;
     private TravellerAgentProfiles travellerAgentProfiles;
-
     int PLACE_AUTOCOMPLETE_REQUEST_CODE = 1;
     private String uniqueId;
     private int roleId = 5;
     double referedAmount = 0;
-
     private ProgressDialog progressDialog;
-
     //Intent values
-    
     int referProfileId=0;
     double referAmountOtherProfile = 0;
     double walletAmountOther = 0;
-    boolean response_str ;
+
+    boolean response_str;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,23 +57,30 @@ public class SignUpScreen extends AppCompatActivity {
         try{
 
             setContentView(R.layout.activity_sign_up_screen);
+            first_name = (MyEditText) findViewById(R.id.fullname);
+            user_name = (MyEditText) findViewById(R.id.username);
+            email_id = (MyEditText) findViewById(R.id.email);
+            phone_no = (MyEditText) findViewById(R.id.phone_number);
+            refercode = (MyEditText) findViewById(R.id.referal_code);
+            password = (MyEditText) findViewById(R.id.password);
+            confirm_password = (MyEditText) findViewById(R.id.con_password);
+            signIn = (MyTextView) findViewById(R.id.signin) ;
+            submit = (MyTextView) findViewById(R.id.signup);
+            mProfileFemale = (RadioButton) findViewById(R.id.female);
+            mProfileMale = (RadioButton) findViewById(R.id.male);
+            mProfileOthers = (RadioButton) findViewById(R.id.other);
 
-            first_name = (EditText_Roboto_Regular) findViewById(R.id.first_name);
-            email_id = (EditText_Roboto_Regular) findViewById(R.id.email_id_profile);
-            phone_no = (EditText_Roboto_Regular) findViewById(R.id.phone_no);
-            refercode = (EditText_Roboto_Regular) findViewById(R.id.refer_code);
-            user_name = (EditText_Roboto_Regular) findViewById(R.id.user_name_profile);
-            password = (EditText_Roboto_Regular) findViewById(R.id.password);
-            confirm_password = (EditText_Roboto_Regular) findViewById(R.id.confirm_password);
-
-            submit = (TextViewRobotoregular) findViewById(R.id.submit_profile);
-            mProfileFemale = (RadioButton) findViewById(R.id.profile_female);
-            mProfileMale = (RadioButton) findViewById(R.id.profile_male);
-            mProfileOthers = (RadioButton) findViewById(R.id.profile_transgender);
-
-            
+            signIn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(SignUpScreen.this,LoginScreen.class);
+                    startActivity(intent);
+                    SignUpScreen.this.finish();
+                }
+            });
             phone_no.setFilters(new InputFilter[]{new InputFilter.LengthFilter(15)});
-            
+
+
             submit.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -88,7 +89,8 @@ public class SignUpScreen extends AppCompatActivity {
                 }
             });
 
-       
+
+
 
         }catch(Exception e){
             e.printStackTrace();
@@ -98,7 +100,7 @@ public class SignUpScreen extends AppCompatActivity {
 
     public void validate()
     {
-        
+
         String fName = first_name.getText().toString();
         String uName = user_name.getText().toString();
         String email = email_id.getText().toString();
@@ -109,7 +111,7 @@ public class SignUpScreen extends AppCompatActivity {
 
         if(fName == null || fName.isEmpty())
         {
-            first_name.setError("Please Enter Name");
+            first_name.setError("Please Enter Full Name");
             first_name.requestFocus();
         }else if(!mProfileMale.isChecked() && !mProfileFemale.isChecked() && !mProfileOthers.isChecked())
         {
@@ -119,6 +121,11 @@ public class SignUpScreen extends AppCompatActivity {
         {
             user_name.setError(getResources().getString(R.string.unique_name_validation_message));
             user_name.requestFocus();
+        }
+        else if(phoneNumber == null || phoneNumber.isEmpty() || phoneNumber.length() != 10)
+        {
+            phone_no.setError(getResources().getString(R.string.phone_number_validation_message));
+            phone_no.requestFocus();
         }
         else if(email == null || email.isEmpty() )
         {
@@ -130,11 +137,7 @@ public class SignUpScreen extends AppCompatActivity {
             email_id.setError(getResources().getString(R.string.email_validation_message));
             email_id.requestFocus();
         }
-        else if(phoneNumber == null || phoneNumber.isEmpty() || phoneNumber.length() != 10)
-        {
-            phone_no.setError(getResources().getString(R.string.phone_number_validation_message));
-            phone_no.requestFocus();
-        }else if(pPassword == null || pPassword.isEmpty())
+        else if(pPassword == null || pPassword.isEmpty())
         {
             password.setError("Please Enter Password");
             password.requestFocus();
@@ -153,11 +156,7 @@ public class SignUpScreen extends AppCompatActivity {
         {
             register();
         }
-
-
     }
-
-
 
     public void register() {
 
@@ -251,7 +250,7 @@ public class SignUpScreen extends AppCompatActivity {
                                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );
                                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                 startActivity(intent);
-                                finish();
+                                SignUpScreen.this.finish();
                             }
 
 
@@ -514,15 +513,10 @@ public class SignUpScreen extends AppCompatActivity {
 
     }
 
-
-
     private boolean checkEmailAvailablity(){
 
-
         final TravellerAgentProfiles p1 = new TravellerAgentProfiles();
-
         p1.setEmail(email_id.getText().toString());
-
         String authenticationString = Util.getToken(SignUpScreen.this);
 
         AgentProfileAPI apiService = Util.getClient().create(AgentProfileAPI.class);
@@ -572,7 +566,6 @@ public class SignUpScreen extends AppCompatActivity {
             }
         });
 //            }
-
 
 //        });
 

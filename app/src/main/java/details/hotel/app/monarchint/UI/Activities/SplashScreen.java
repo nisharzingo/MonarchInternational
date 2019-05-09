@@ -88,7 +88,8 @@ public class SplashScreen extends AppCompatActivity {
 
         animation = AnimationUtils.loadAnimation(this, R.anim.pro_animation);
         appSlogan.startAnimation(animation);
+
+        animation = AnimationUtils.loadAnimation(this,R.anim.logo_animation);
+        pics.startAnimation(animation);
     }
-
-
 }

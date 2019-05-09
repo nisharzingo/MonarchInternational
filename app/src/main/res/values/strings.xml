@@ -36,7 +36,8 @@
     <string name="unique_name_validation_message">Please Enter Your User Name</string>
     <string name="email_validation_message">Please Enter Valid Email Id</string>
     <string name="phone_validation_message">Please Enter Valid Phone Number</string>
-
+    <string name="user_name_validation_message">Please Enter Valid User Name</string>
+    <string name="password_validation_message">Please Enter Valid Password</string>
     <string name="no_matches_found_filter_new_text">No matches found for the filters applied.</string>
     <string name="reset_filter_button_text">Reset Filter</string>
     <string name="loader_message">Please wait...</string>
