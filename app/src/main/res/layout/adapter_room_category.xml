@@ -51,6 +51,16 @@
                         android:textStyle="bold"
                         android:textColor="@color/gen_black"/>
 
+                    <TextView
+                        android:id="@+id/image_url1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:visibility="gone"
+                        android:textSize="16dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/gen_black"/>
+
                 </LinearLayout>
 
                 <com.facebook.shimmer.ShimmerFrameLayout
@@ -108,38 +118,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:text="• Full A/C, full sleeve"
-                            android:textSize="12dp"
-                            android:textColor="@color/gen_black"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
-                            android:text="• Fabric: Cotton"
-                            android:textSize="12dp"
-                            android:textColor="@color/gen_black"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
-                            android:text="• Pattern: printed"
-                            android:textSize="12dp"
-                            android:textColor="@color/gen_black"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingLeft="5dp"
-                            android:paddingTop="2dp"
-                            android:visibility="gone"
-                            android:paddingBottom="2dp"
-                            android:id="@+id/image_url1"
-                            android:paddingRight="5dp"
+                            android:id="@+id/description_cate"
                             android:text=""
-                            android:textSize="18dp"
-                            android:textColor="#fff"
-                            android:layout_marginLeft="16dp"
-                            />
+                            android:textSize="12dp"
+                            android:textColor="@color/gen_black"/>
 
                     </LinearLayout>
                 </LinearLayout>

@@ -25,6 +25,7 @@ import details.hotel.app.monarchint.Adapter.Pager;
 import details.hotel.app.monarchint.Model.HotelDetails;
 import details.hotel.app.monarchint.Model.HotelImage;
 import details.hotel.app.monarchint.R;
+import details.hotel.app.monarchint.UI.Fragments.AmenityAllFragment;
 import details.hotel.app.monarchint.UI.Fragments.AmenityListFragment;
 import details.hotel.app.monarchint.UI.Fragments.GalleryFragment;
 import details.hotel.app.monarchint.Utils.Constants;
@@ -86,9 +87,9 @@ public class AboutHotelActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
 
         Pager adapter = new Pager(getSupportFragmentManager());
-        adapter.addFragment(new AmenityListFragment(), "Facilities");
-        adapter.addFragment(new AmenityListFragment(), "Free");
-        adapter.addFragment(new AmenityListFragment (), "Paid");
+        adapter.addFragment(new AmenityAllFragment(), "Facilities");
+      /*  adapter.addFragment(new AmenityListFragment(), "Free");
+        adapter.addFragment(new AmenityListFragment (), "Paid");*/
         viewPager.setAdapter(adapter);
 
 

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".UI.Activities.AppTCScreen">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:textColor="@color/colorPrimary"
+            android:text="MOBILE APP TERMS &amp; CONDITIONS OF USE"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:layout_marginTop="5dp"
+            android:textStyle="bold"
+            android:textColor="@color/txt_color_black"
+            android:text="Introduction"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:layout_marginTop="5dp"
+
+            android:textColor="@color/txt_color_black"
+            android:text="@string/introduction"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:layout_marginTop="5dp"
+            android:textStyle="bold"
+            android:textColor="@color/txt_color_black"
+            android:text="Conditions"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/colorPrimary"
+            android:text="Mobile App"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:layout_marginTop="5dp"
+
+            android:textColor="@color/txt_color_black"
+            android:text="@string/mobile_app"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/colorPrimary"
+            android:text="TradeMarks"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:layout_marginTop="5dp"
+
+            android:textColor="@color/txt_color_black"
+            android:text="@string/trade"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/colorPrimary"
+            android:text="Copyright"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:layout_marginTop="5dp"
+
+            android:textColor="@color/txt_color_black"
+            android:text="@string/copy"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/colorPrimary"
+            android:text="Hotel Reservations"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:layout_marginTop="5dp"
+
+            android:textColor="@color/txt_color_black"
+            android:text="@string/reservation"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/colorPrimary"
+            android:text="Security &amp; Non Confidentiality"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:layout_marginTop="5dp"
+
+            android:textColor="@color/txt_color_black"
+            android:text="@string/security"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/colorPrimary"
+            android:text="Termination of Access"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:layout_marginTop="5dp"
+
+            android:textColor="@color/txt_color_black"
+            android:text="@string/termination"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/colorPrimary"
+            android:text="Governing Law &amp; Jurisdiction"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:layout_marginTop="5dp"
+
+            android:textColor="@color/txt_color_black"
+            android:text="@string/copy"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/colorPrimary"
+            android:text="Return to Mobile App"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:layout_marginTop="5dp"
+
+            android:textColor="@color/txt_color_black"
+            android:text="To return to the Mobile App, click where indicated. By doing so, you acknowledge that you have read, understood and accepted these Conditions."/>
+
+    </LinearLayout>
+
+</ScrollView>

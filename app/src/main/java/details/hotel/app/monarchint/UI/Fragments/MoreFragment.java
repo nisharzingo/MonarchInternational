@@ -17,6 +17,9 @@ import details.hotel.app.monarchint.Adapter.NavigationListAdapter;
 import details.hotel.app.monarchint.Model.NavBarItems;
 import details.hotel.app.monarchint.R;
 import details.hotel.app.monarchint.UI.Activities.AboutHotelActivity;
+import details.hotel.app.monarchint.UI.Activities.AppPrivacyScreen;
+import details.hotel.app.monarchint.UI.Activities.AppTCScreen;
+import details.hotel.app.monarchint.UI.Activities.OffersActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -91,32 +94,28 @@ public class MoreFragment extends Fragment {
 
                 break;
 
-            /*case "Terms & Conditions":
-                Intent dynamic_2 = new Intent(getContext(), TermsAndConditionActivity.class);
+            case "Terms & Conditions":
+                Intent dynamic_2 = new Intent(getContext(), AppTCScreen.class);
                 startActivity(dynamic_2);
 
                 break;
 
-            case "Logout":
-                Intent dynamic_3 = new Intent(getContext(), SplashActivity.class);
-                startActivity(dynamic_3);
 
-                break;
 
-            case "Hotel Option":
-                Intent dynamic_4 = new Intent(getContext(), HotelOptionsScreen.class);
+            case "Privacy":
+                Intent dynamic_4 = new Intent(getContext(), AppPrivacyScreen.class);
                 startActivity(dynamic_4);
 
                 break;
 
-                case "Create Hotel":
+            case "Offers":
 
-                    Intent dynamic_3 = new Intent(MainActivity.this,CreateHotelActivity.class);
-                    startActivity(dynamic_3);
+                Intent dynamic_3 = new Intent(getActivity(),OffersActivity.class);
+                startActivity(dynamic_3);
 
-                    break;
+                break;
 
-                case "Create RatePlan":
+               /* case "Create RatePlan":
 
                     Intent dynamic_4 = new Intent(MainActivity.this, CreateRatePlan.class);
                     startActivity(dynamic_4);
@@ -127,7 +126,13 @@ public class MoreFragment extends Fragment {
                     Intent dynamic_5 = new Intent(MainActivity.this, CreateRatePlanListScreen.class);
                     startActivity(dynamic_5);
 
-                    break;*/
+                    break;
+
+                     case "Logout":
+                Intent dynamic_3 = new Intent(getContext(), SplashActivity.class);
+                startActivity(dynamic_3);
+
+                break;*/
         }
     }
 

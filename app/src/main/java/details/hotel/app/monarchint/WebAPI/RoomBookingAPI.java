@@ -2,6 +2,8 @@ package details.hotel.app.monarchint.WebAPI;
 
 import java.util.ArrayList;
 
+import details.hotel.app.monarchint.Model.BookingsNotificationManagers;
+import details.hotel.app.monarchint.Model.FireBaseModel;
 import details.hotel.app.monarchint.Model.RoomBookings;
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -23,5 +25,12 @@ public interface RoomBookingAPI {
 
     @GET("RoomBookings/GetRoomBookingByTravellerAgentId/{TravellerAgentId}")
     Call<ArrayList<RoomBookings>> getBookingsByProfileId(@Header("Authorization") String authKey, @Path("TravellerAgentId") int TravellerAgentId);
+
+    @POST("BookingsNotificationManagers")
+    Call<BookingsNotificationManagers> saveBookingNotification(@Header("Authorization") String auth, @Body BookingsNotificationManagers hotelNotification);
+
+    @POST("Notification/SendBookingNotification")
+    Call<ArrayList<String>> sendBookingNotification(@Header("Authorization") String authKey, @Body FireBaseModel body);
+
 
 }

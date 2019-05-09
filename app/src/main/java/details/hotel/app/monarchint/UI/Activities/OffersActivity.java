@@ -5,6 +5,7 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -16,6 +17,7 @@ import details.hotel.app.monarchint.Adapter.OfferNewAdapter;
 import details.hotel.app.monarchint.Adapter.OffersAdapter;
 import details.hotel.app.monarchint.Model.Offers;
 import details.hotel.app.monarchint.R;
+import details.hotel.app.monarchint.UI.Resto.FoodListActivity;
 import details.hotel.app.monarchint.Utils.Constants;
 import details.hotel.app.monarchint.Utils.ThreadExecuter;
 import details.hotel.app.monarchint.Utils.Util;
@@ -34,6 +36,10 @@ public class OffersActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_offers);
+
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setTitle("Offer List");
 
         recyclerView = findViewById(R.id.offers_recycler);
         getOffersByHotelId();
@@ -103,5 +109,19 @@ public class OffersActivity extends AppCompatActivity {
                 });
             }
         });
+    }
+
+    
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+        switch (id)
+        {
+            case android.R.id.home:
+                OffersActivity.this.finish();
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

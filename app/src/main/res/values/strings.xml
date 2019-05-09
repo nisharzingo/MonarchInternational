@@ -72,11 +72,100 @@
     <string name="title_more">More</string>
     <string name="book_now">Book Now</string>
 
+    <string name="use_info">We will only use your personal information when the law allows us to. Most commonly, we will use your personal information in the following circumstances:
+\n•Where we need to perform the contract we have entered into with you.
+\n•Where we need to comply with a legal obligation.
+\n•Where it is necessary for our legitimate interests (or those of a third party) and your interests and fundamental rights do not override those interests.
+\n•Where you have given us explicit consent to do so.
+</string>
+
+    <string name="how_personal">We collect personal information about data subjects through various methods; check-ins, bookings, and reservations. Either directly fr data subjects or setimes for a third party acting on our behalf (for example through a booking agency, travel agent or corporate account).</string>
+
+    <string name="special_cate">•Information about your race or ethnicity, religious beliefs, sexual orientation.
+\n•Information about your health, including but not limited to any medical conditions, food allergies.
+</string>
+
+
+    <string name="data_privacy">What is the purpose of this document?
+ \n\nHOTELS along with all its holding company, associates, affiliates, joint ventures and group companies (hereinafter referred to as the " HOTELS ") is committed to protecting the privacy and security of your personal information.
+\n\nThis privacy statement describes how we collect and use your personal information and data, in accordance with the EU General Data Protection Regulation (GDPR) and other laws as applicable.
+\n\nIt applies to all guests and visitors, known through this document as "data subjects".
+ \n\nHOTELS is a "data controller". This means that we are responsible for deciding how we hold and use personal information about you.
+\n\nWe are required under data protection legislation to notify you of the information contained in this privacy statement.
+\n\nThis statement applies to data subjects. This statement does not form part of any contract to provide services. We may update this statement at any time.
+\n\nIt is important that you read this statement, together with any other privacy statement we may provide on specific occasions when we are collecting or processing personal information about you, so that you are aware of how and why we are using such information.
+</string>
+
+    <string name="data_principle">We will comply with data protection law. This says that the personal information we hold about you must be:
+Used lawfully, fairly and in a transparent way.
+Collected only for valid purposes that we have clearly explained to you and not used in any way that is incompatible with those purposes.
+Relevant to the purposes we have told you about and limited only to those purposes.
+Accurate and kept up to date.
+Kept only as long as necessary for the purposes we have told you about.
+Kept securely.
+</string>
+    
+    <string name="info_about_you">Personal data, or personal information, means any information about an individual fr which that person can be identified. It does not include data where the identity has been removed (anonymous data).
+There are "special categories" of more sensitive personal data which require a higher level of protection.
+</string>
+    
+<string name="personal_info_about_you">•Personal contact details such as name, title, addresses, telephone numbers, and personal email addresses.
+\n•Date of birth.
+\n•Gender.
+    \n•Marital status.
+\n•Next of kin and emergency contact information.
+\n•National Insurance or TAX ID number/PAN card.
+\n•Bank account details, payroll records and tax status information.
+\n•Personal identification such as Driving licence, Passport, Aadhar card.
+\n•Grievance information.
+\n•CCTV footage and other information obtained through electronic means such as door access records.
+\n•Information about your use of our information and communications systems.
+\n•Photographs.
+
+</string>
+    
+    
+    
+    
+    <string name="govern">These Conditions are governed by the laws in force in India and you agree to submit to the exclusive jurisdiction of the courts of India.
+</string>
+    <string name="termination">If you breach any of these Conditions your license to use the Mobile App will terminate immediately without the necessity of any notice being given to you.
+\n\nOtherwise access to the Mobile App may be terminated at any time by “HOTEL”without notice.
+\n\nThe provisions of these Conditions excluding, limiting and disclaiming the liability of “HOTEL”will nevertheless survive any such termination.
+</string>
+    <string name="security">Electronic transmissions of data including the Internet are public media and any use of such media is public not private.
+\n\nInformation related to or arising from such use is either public or the property of those collecting the information and not personal or private information.
+\n\n“HOTEL” does not warrant and cannot ensure the security or confidentiality of any information which you transmit to “HOTEL”. Accordingly, any information which you transmit to “HOTEL” is transmitted at your own risk.
+</string>
+
+    <string name="reservation">The reservations feature of the Mobile App is provided solely to assist customers in determining the availability of travel related services and products and to make legitimate reservations and for no other purpose.\n\nYou warrant that you are at least 18 years of age, possess the legal authority to enter into the legal agreement constituted by your acceptance of these Conditions and to use the Mobile App in accordance with such Conditions.
+\n\nYou agree to be financially responsible for your use of the Mobile App including without limitation for all reservations made by you or on your account for you, whether authorised by you or not. For any reservations or other services for which fees may be charged you agree to abide by the terms or conditions of supply including without limitation payment of all moneys due under such terms or conditions.\n\nThe Mobile App contains details of hotel charges and room rates (including any available special offers) for hotels and resorts owned or managed by “HOTEL”.
+\n\nHotel reservation terms and conditions of booking are set out on the Mobile App and payment will be in accordance with the procedure set out in such terms and conditions.
+</string>
+
+    <string name="copy">The information, text, graphics, images, sounds, links and all other information and software published or otherwise contained in the Mobile App (“Information”) are either owned exclusively by “HOTEL” or licensed by “HOTEL” and except as specifically provided in these Conditions may not be copied, distributed, displayed, reproduced or transmitted, in any form or by any means whether electronic, mechanical, photocopying, recording, or otherwise, without the prior written approval of “HOTEL”. Without limitation you may not, without such approval from “HOTEL”, create derivative works from any part of the Mobile App or commercialise any Information, products or services obtained from any part of the Mobile App. Information procured from a third party may be the subject of copyright owned by that third party.
+</string>
+
+
+    <string name="trade">The Mobile App contains “HOTEL” trade and service marks and devices (including the word “HOTEL”) and other valuable trade or service marks owned by “HOTEL” or licensed to “HOTEL” to distinguish its services and products. These trade and service marks and related intellectual property are protected from copying and simulation under national and international laws and may not be reproduced or copied without the express prior written consent of “HOTEL”.\n\nWithout limitation, you must not use any of the said trade or service marks:\n\n
+- in or as the whole or part of your own trademarks;\n
+- in connection with activities, products or services which are not undertaken or provided by “HOTEL”;\n
+- in a manner which may be confusing, misleading or deceptive; or\n
+- in a manner that disparages “HOTEL”or its information, products or services (including this Mobile App).\n
+</string>
+
+    <string name="mobile_app">The Mobile App makes available information relating to hotels and resorts owned or managed by EIH Limited, a corporation constituted under the laws of India, and its subsidiaries, controlled entities, affiliates and related parties (“HOTEL”).
+</string>
+
+    <string name="introduction">The terms and conditions set out below ("Conditions") apply to your use of this Mobile App and related Mobile App ("Mobile App"), including the use of the information services offered on the Mobile App.\n\nIn accessing and using the Mobile App, you agree to be bound by these Conditions so please carefully read this section before proceeding.\n\nIf you do not accept these Conditions, you must refrain from using the Mobile App.\n\nThese Conditions must be read in conjunction with any other applicable terms and conditions governing the use of the Mobile App.
+</string>
+
     <array name="more_option">
         <item>About Hotel</item>
+        <item>Offers</item>
         <item>Terms &amp; Conditions</item>
         <item>Privacy</item>
-        <item>Give Feedback or Ask Us</item>
+        <!--<item>Give Feedback or Ask Us</item>-->
 
 
         <!-- <item>Logout</item>

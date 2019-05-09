@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -20,8 +21,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -31,9 +35,11 @@ import java.util.Collections;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import details.hotel.app.monarchint.Adapter.CustomGridViewAdapter;
 import details.hotel.app.monarchint.Adapter.HotelImageAdapter;
 import details.hotel.app.monarchint.Adapter.OfferNewAdapter;
 import details.hotel.app.monarchint.Adapter.OfferSliderAdapter;
+import details.hotel.app.monarchint.Adapter.Pager;
 import details.hotel.app.monarchint.Adapter.RestSlideAdapter;
 import details.hotel.app.monarchint.Customs.CustomAdapters.AutoScrollImageAdapter;
 import details.hotel.app.monarchint.Model.HotelDetails;
@@ -61,6 +67,8 @@ import retrofit2.Response;
 public class HomeScreenFragment extends Fragment {
 
     AutoScrollImageAdapter hotelImagesScroller;
+    GridView androidGridView;
+
     ViewPager offerScroller,restScroller;
     ImageView mContactUs,mGallery,mAmenities,mRooms,mLocation,mBook,mRest,mAbout;//mLoader
     ImageView mWhatsapp,mPhone;
@@ -76,6 +84,15 @@ public class HomeScreenFragment extends Fragment {
     Timer timer;
     final long DELAY_MS = 2000;
     final long PERIOD_MS = 7000;
+
+    String[] gridViewString = {
+            "Wifi", "Airport Shuttle",  "No Smoking", "Family", "Restaurant"
+
+    } ;
+    int[] gridViewImageId = {
+            R.drawable.wifi, R.drawable.airport_shuttle, R.drawable.nosmoking, R.drawable.family, R.drawable.restaurants
+
+    };
 
     public HomeScreenFragment() {
         // Required empty public constructor
@@ -106,6 +123,22 @@ public class HomeScreenFragment extends Fragment {
 
             mWhatsapp = (ImageView) view.findViewById(R.id.whatsapp_icon);
             mPhone = (ImageView) view.findViewById(R.id.phone_icon);
+
+            CustomGridViewAdapter adapterViewAndroid = new CustomGridViewAdapter(getContext(), gridViewString, gridViewImageId);
+            androidGridView=(GridView)view.findViewById(R.id.grid_view_image_text);
+
+            androidGridView.setAdapter(adapterViewAndroid);
+            androidGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view,
+                                        int i, long id) {
+                    Toast.makeText(getContext(), "GridView Item: " + gridViewString[+i], Toast.LENGTH_LONG).show();
+                }
+            });
+
+
+
 
            /* Restaurants rs = new Restaurants();
             rs.setRestaurantName("Saara's Grill n Spice");
@@ -290,7 +323,7 @@ public class HomeScreenFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
 
-                    Fragment  amenityFragment = new AmenityFragment();
+                    Fragment  amenityFragment = new AmenityAllFragment();
                     FragmentManager fragmentManager = getFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     fragmentTransaction.replace(R.id.hotel_fragment_view, amenityFragment);
@@ -304,7 +337,7 @@ public class HomeScreenFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
 
-                    Fragment  roomsFragment = new RoomsFragment();
+                    Fragment  roomsFragment = new RoomCategoryFragment();
                     FragmentManager fragmentManager = getFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     fragmentTransaction.replace(R.id.hotel_fragment_view, roomsFragment);
@@ -333,7 +366,7 @@ public class HomeScreenFragment extends Fragment {
                 public void onClick(View v) {
 
 
-                    Fragment  roomsFragment = new RoomsFragment();
+                    Fragment  roomsFragment = new RoomCategoryFragment();
                     FragmentManager fragmentManager = getFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     fragmentTransaction.replace(R.id.hotel_fragment_view, roomsFragment);
@@ -354,6 +387,8 @@ public class HomeScreenFragment extends Fragment {
         }
 
     }
+
+
 
     public void getHotelImages(final int hotelID)
     {

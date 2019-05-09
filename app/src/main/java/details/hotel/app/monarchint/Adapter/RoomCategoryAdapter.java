@@ -65,6 +65,31 @@ public class RoomCategoryAdapter extends RecyclerView.Adapter<RoomCategoryAdapte
 
             String desc = roomCategories.get(position).getDescription();
 
+            if(desc!=null&&desc.contains(",")){
+
+                String[] split = desc.split(",");
+
+                int length = split.length;
+
+                String value = "";
+
+
+                if(length!=0){
+
+                    for(int i=0;i<length;i++){
+
+                        value = value+"• "+split[i]+"\n";
+
+                    }
+
+                    holder.description_cate.setText(value);
+
+
+                }
+            }else{
+                holder.description_cate.setText(desc);
+            }
+
 
 
 
@@ -135,7 +160,7 @@ public class RoomCategoryAdapter extends RecyclerView.Adapter<RoomCategoryAdapte
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView mCategoryName,mImageUrl,mSell,mDispl;//mDescription,mReadMore,mReadLess
+        TextView mCategoryName,description_cate,mImageUrl,mSell,mDispl;//mDescription,mReadMore,mReadLess
         RibbonView mDisc;
         ImageView mCategoryImage;
 
@@ -144,6 +169,7 @@ public class RoomCategoryAdapter extends RecyclerView.Adapter<RoomCategoryAdapte
         public ViewHolder(View itemView) {
             super(itemView);
             mCategoryName = (TextView)itemView.findViewById(R.id.category_name);
+            description_cate = (TextView)itemView.findViewById(R.id.description_cate);
            // mDescription = (TextView) itemView.findViewById(R.id.description);
             mImageUrl = (TextView) itemView.findViewById(R.id.image_url1);
             mSell = (TextView) itemView.findViewById(R.id.room_price_dis);

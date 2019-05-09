@@ -2,6 +2,7 @@ package details.hotel.app.monarchint.UI.Fragments;
 
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -46,17 +47,6 @@ public class AmenityListFragment extends Fragment {
 
             View view = inflater.inflate(R.layout.fragment_amenity_list,container,false);
 
-            CustomGridViewAdapter adapterViewAndroid = new CustomGridViewAdapter(getContext(), gridViewString, gridViewImageId);
-            androidGridView=(GridView)view.findViewById(R.id.grid_view_image_text);
-            androidGridView.setAdapter(adapterViewAndroid);
-            androidGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view,
-                                        int i, long id) {
-                    Toast.makeText(getContext(), "GridView Item: " + gridViewString[+i], Toast.LENGTH_LONG).show();
-                }
-            });
 
             return view;
 
@@ -64,6 +54,25 @@ public class AmenityListFragment extends Fragment {
             e.printStackTrace();
             return null;
         }
+
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        CustomGridViewAdapter adapterViewAndroid = new CustomGridViewAdapter(getContext(), gridViewString, gridViewImageId);
+        androidGridView=(GridView)view.findViewById(R.id.grid_view_image_text);
+        androidGridView.setAdapter(adapterViewAndroid);
+        androidGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int i, long id) {
+                Toast.makeText(getContext(), "GridView Item: " + gridViewString[+i], Toast.LENGTH_LONG).show();
+            }
+        });
+
 
     }
 

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".UI.Activities.AppPrivacyScreen">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical">
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textSize="18dp"
+          android:textStyle="bold"
+          android:layout_marginTop="8dp"
+          android:textColor="@color/colorPrimary"
+          android:text="HOTELS Data Privacy Statement"/>
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textSize="16dp"
+          android:layout_marginTop="5dp"
+          android:textColor="@color/txt_color_black"
+          android:text="@string/data_privacy"/>
+
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textSize="18dp"
+          android:textStyle="bold"
+          android:layout_marginTop="8dp"
+          android:textColor="@color/colorPrimary"
+          android:text="Data protection principles"/>
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textSize="16dp"
+          android:layout_marginTop="5dp"
+          android:textColor="@color/txt_color_black"
+          android:text="@string/data_principle"/>
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textSize="18dp"
+          android:textStyle="bold"
+          android:layout_marginTop="8dp"
+          android:textColor="@color/colorPrimary"
+          android:text="The kind of information we hold about you"/>
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textSize="16dp"
+          android:layout_marginTop="5dp"
+          android:textColor="@color/txt_color_black"
+          android:text="@string/info_about_you"/>
+
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textSize="18dp"
+          android:textStyle="bold"
+          android:layout_marginTop="8dp"
+          android:textColor="@color/colorPrimary"
+          android:text="We may collect, store, and use the following categories of personal information about you: "/>
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textSize="16dp"
+          android:layout_marginTop="5dp"
+          android:textColor="@color/txt_color_black"
+          android:text="@string/personal_info_about_you"/>
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textSize="18dp"
+          android:textStyle="bold"
+          android:layout_marginTop="8dp"
+          android:textColor="@color/colorPrimary"
+          android:text="We may also collect, store and use the following 'special categories' of more sensitive personal information:"/>
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textSize="16dp"
+          android:layout_marginTop="5dp"
+          android:textColor="@color/txt_color_black"
+          android:text="@string/special_cate"/>
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textSize="18dp"
+          android:textStyle="bold"
+          android:layout_marginTop="8dp"
+          android:textColor="@color/colorPrimary"
+          android:text="How is your personal information collected?"/>
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textSize="16dp"
+          android:layout_marginTop="5dp"
+          android:textColor="@color/txt_color_black"
+          android:text="@string/how_personal"/>
+
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textSize="18dp"
+          android:textStyle="bold"
+          android:layout_marginTop="8dp"
+          android:textColor="@color/colorPrimary"
+          android:text="How we will use information about you"/>
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textSize="16dp"
+          android:layout_marginTop="5dp"
+          android:textColor="@color/txt_color_black"
+          android:text="@string/use_info"/>
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textSize="18dp"
+          android:textStyle="bold"
+          android:layout_marginTop="8dp"
+          android:textColor="@color/colorPrimary"
+          android:text="Relevant Legislation"/>
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textSize="16dp"
+          android:layout_marginTop="5dp"
+          android:textColor="@color/txt_color_black"
+          android:text="Along with our business and internal computer systems, this website is designed to comply with the following national and international legislation with regards to data protection and user privacy:"/>
+
+
+  </LinearLayout>
+
+</ScrollView>

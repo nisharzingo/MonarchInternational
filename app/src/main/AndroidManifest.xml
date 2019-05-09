@@ -19,18 +19,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UI.Activities.SplashScreen">
+        <activity android:name=".UI.Activities.SplashScreen"
+            android:theme="@style/AppTheme.FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".UI.Activities.OffersActivity"
-            android:theme="@style/AppTheme.FullScreen">
-
-        </activity>
+        <activity android:name=".UI.Activities.OffersActivity" />
         <activity
             android:name=".UI.Activities.SignUpOptionScreen"
             android:theme="@style/AppTheme.FullScreen" />
@@ -81,6 +78,8 @@
             android:name=".UI.Activities.CategoryBookScreen"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".UI.Activities.AboutHotelActivity" />
+        <activity android:name=".UI.Activities.AppTCScreen" />
+        <activity android:name=".UI.Activities.AppPrivacyScreen"></activity>
     </application>
 
 </manifest>

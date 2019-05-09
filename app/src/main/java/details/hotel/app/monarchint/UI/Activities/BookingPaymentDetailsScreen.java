@@ -3,6 +3,7 @@ package details.hotel.app.monarchint.UI.Activities;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.Handler;
 import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -26,11 +27,18 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.zip.CRC32;
 
+import details.hotel.app.monarchint.Adapter.OfferNewAdapter;
 import details.hotel.app.monarchint.Customs.CustomFonts.TextViewSFProDisplayRegular;
 import details.hotel.app.monarchint.Model.AvailabiltyCheckPostData;
+import details.hotel.app.monarchint.Model.BookingsNotificationManagers;
 import details.hotel.app.monarchint.Model.EmailData;
+import details.hotel.app.monarchint.Model.FireBaseModel;
+import details.hotel.app.monarchint.Model.Invoice;
+import details.hotel.app.monarchint.Model.Offers;
 import details.hotel.app.monarchint.Model.Rates;
 import details.hotel.app.monarchint.Model.RoomBookings;
 import details.hotel.app.monarchint.Model.RoomData;
@@ -42,6 +50,7 @@ import details.hotel.app.monarchint.Utils.PreferenceHandler;
 import details.hotel.app.monarchint.Utils.RestoUtil;
 import details.hotel.app.monarchint.Utils.ThreadExecuter;
 import details.hotel.app.monarchint.Utils.Util;
+import details.hotel.app.monarchint.WebAPI.OfferAPI;
 import details.hotel.app.monarchint.WebAPI.RateApi;
 import details.hotel.app.monarchint.WebAPI.RoomBookingAPI;
 import details.hotel.app.monarchint.WebAPI.SendEmailAPI;
@@ -53,8 +62,8 @@ import retrofit2.Response;
 public class BookingPaymentDetailsScreen extends AppCompatActivity implements ResponseMessage {
 
     TextViewSFProDisplayRegular mFrom,mTo,mAmount,mNights,mNoRooms,mNoPax;
-    EditText mName,mEmail,mPhone,mGstNum,mCompanyname;
-    TextView mPay,mHotelName,mHotelCharge,mHotelGst,mDiscount,mDisplay;
+    EditText mName,mEmail,mPhone,mGstNum,mCompanyname,mOfferEdit;
+    TextView mPay,mHotelName,mHotelCharge,mHotelGst,mDiscount,mDisplay,mZingoMoney,mApplyoffer;
     RadioButton mBusiness,mPersonal,mMale,mFemale;
     LinearLayout mBusinessLay;
 
@@ -79,6 +88,8 @@ public class BookingPaymentDetailsScreen extends AppCompatActivity implements Re
     private int k = 0;
     public final int PERMISSION_REQUEST_CODE = 101;
 
+    ArrayList<Offers> offersArrayList;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +97,8 @@ public class BookingPaymentDetailsScreen extends AppCompatActivity implements Re
 
         try{
             setContentView(R.layout.activity_booking_payment_new_design);//  08046767000 7337877282
+
+            getOffersByHotelId(Constants.HOTEL_DATA_ID);
 
             mFrom = (TextViewSFProDisplayRegular)findViewById(R.id.checkintime);
             mTo = (TextViewSFProDisplayRegular)findViewById(R.id.checkouttime);
@@ -99,6 +112,9 @@ public class BookingPaymentDetailsScreen extends AppCompatActivity implements Re
             mHotelCharge = (TextView) findViewById(R.id.hotel_charges);
             mHotelGst = (TextView) findViewById(R.id.hotel_gst_charges);
             mDiscount = (TextView) findViewById(R.id.hotel_discount);
+            mZingoMoney = (TextView) findViewById(R.id.zingo_money);
+            mApplyoffer = (TextView) findViewById(R.id.apply_promo_code);
+            mOfferEdit = (EditText) findViewById(R.id.enter_promo_code);
 
             mName = (EditText)findViewById(R.id.fullname);
             mEmail = (EditText)findViewById(R.id.email);
@@ -259,6 +275,35 @@ public class BookingPaymentDetailsScreen extends AppCompatActivity implements Re
                 @Override
                 public void onClick(View v) {
                     mBusinessLay.setVisibility(View.VISIBLE);
+                }
+            });
+
+            mApplyoffer.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String offer_code = mOfferEdit.getText().toString();
+
+                    if(offer_code==null&&offer_code.isEmpty()){
+
+                        Toast.makeText(BookingPaymentDetailsScreen.this, "Please enter Coupon Code", Toast.LENGTH_SHORT).show();
+
+                    }else if (offersArrayList==null&&offersArrayList.size()==0){
+
+                        Toast.makeText(BookingPaymentDetailsScreen.this, "No Offer for you", Toast.LENGTH_SHORT).show();
+
+                    }else{
+
+                        for(int i=0;i<offersArrayList.size();i++){
+
+                            if(offer_code.equalsIgnoreCase(offersArrayList.get(i).getCouponCode())){
+
+                                calculation(offersArrayList.get(i).getPercentage());
+                                break;
+                            }
+                        }
+                    }
+
+
                 }
             });
 
@@ -593,9 +638,9 @@ public class BookingPaymentDetailsScreen extends AppCompatActivity implements Re
 
                     bookings.setBalanceAmount((int) Double.parseDouble(total));
                 }else{
-                    double valu =  Double.parseDouble(total) * 10;
-                    double per = valu/100.0;
-                    bookings.setBalanceAmount((int)(valu-per));
+                    /*double valu =  Double.parseDouble(total) * 10;
+                    double per = valu/100.0;*/
+                    bookings.setBalanceAmount(0);
                 }
 
                 bookings.setBookingPlan("EP");
@@ -691,7 +736,9 @@ public class BookingPaymentDetailsScreen extends AppCompatActivity implements Re
 
                                 if (dto != null) {
 
-                                    String body = "<html><head><style>table " +
+
+
+                                   /* String body = "<html><head><style>table " +
                                             "{border-collapse: collapse;}" +
                                             "table, td, th {" +
                                             "border: 1px solid black;} table th{\n" +
@@ -711,13 +758,54 @@ public class BookingPaymentDetailsScreen extends AppCompatActivity implements Re
                                     emailData.setUserName("nishar@zingohotels.com");
                                     emailData.setPassword("Razin@1993");
                                     emailData.setFromName("Nishar");
-                                    emailData.setFromEmail("nishar@zingohotels.com");
+                                    emailData.setFromEmail("nishar@zingohotels.com");*/
+
+                                    Invoice invoice = new Invoice();
+                                    invoice.setTravellerId(dto.getTravellerId());
+                                    invoice.setEmailAddress(mEmail.getText().toString()+",nishar@zingohotels.com,abhinav@zingohotels.com");
+                                    invoice.setBookingNumber(dto.getBookingNumber());
+                                    invoice.setHotelId(dto.getHotelId());
+                                    invoice.setCheckInDate(dto.getCheckInDate());
+                                    invoice.setCheckOutDate(dto.getCheckOutDate());
+                                    invoice.setRoomNo("0");
+
+                                    Invoice invoices = new Invoice();
+                                    invoices.setTravellerId(dto.getTravellerId());
+                                    invoices.setEmailAddress("hotelmonarchint@gmail.com,nishar@zingohotels.com,abhinav@zingohotels.com");
+                                    invoices.setBookingNumber(dto.getBookingNumber());
+                                    invoices.setHotelId(dto.getHotelId());
+                                    invoices.setCheckInDate(dto.getCheckInDate());
+                                    invoices.setCheckOutDate(dto.getCheckOutDate());
+                                    invoices.setRoomNo("0");
 
                                     if(Util.isNetworkAvailable(BookingPaymentDetailsScreen.this)){
-                                        sendEmailAutomatic(emailData);
+                                        sendEmailAutomatics(invoice);
+                                        sendEmailAutomatics(invoices);
                                     }else{
                                         Toast.makeText(BookingPaymentDetailsScreen.this, "Please check your Internet Connection", Toast.LENGTH_LONG).show();
                                     }
+
+                                    FireBaseModel fm = new FireBaseModel();
+                                    fm.setSenderId("415720091200");
+                                    fm.setServerId("AIzaSyBFdghUu7AgQVnu27xkKKLHJ6oSz9AnQ8M");
+                                    fm.setHotelId(dto.getHotelId());
+                                    fm.setTitle("New Booking from Zingo Hotels");
+                                    fm.setMessage("Congrats! Hotel Monarch International got one new booking for "+dto.getDurationOfStay() +" nights from "+dto.getCheckInDate()+" to "+dto.getCheckInDate()+"\nBooking ID:"+dto.getBookingId());
+                                    //registerTokenInDB(fm);
+                                    fm.setTravellerName(mName.getText().toString());
+                                    fm.setNoOfGuest("No of Guest: "+dto.getNoOfAdults());
+                                    fm.setCheckInDate(""+dto.getCheckInDate());
+                                    fm.setCheckOutDate(""+dto.getCheckOutDate());
+                                    fm.setTotalAmount("Rs. "+dto.getTotalAmount());
+                                    fm.setCommissionAmount("Rs. "+dto.getCommissionAmount());
+                                    fm.setNetAmount("Rs. "+dto.getTotalAmount());
+                                    SimpleDateFormat sdf = new SimpleDateFormat("MMM dd yyyy, hh:mm a");
+                                    SimpleDateFormat sdft = new SimpleDateFormat("hh:mm a");
+                                    fm.setNotificationDate(sdf.format(new Date()));
+                                    fm.setNotificationTime(sdft.format(new Date()));
+                                    fm.setBookingDateTime(""+dto.getBookingDate());
+
+                                    sendNotification(fm,dto.getBookingStatus());
 
                                     Toast.makeText(BookingPaymentDetailsScreen.this, "Booking done", Toast.LENGTH_SHORT).show();
                                     Intent book = new Intent(BookingPaymentDetailsScreen.this,BookingDoneScreen.class);
@@ -897,6 +985,71 @@ public class BookingPaymentDetailsScreen extends AppCompatActivity implements Re
         });
     }
 
+    private void sendEmailAutomatics(final Invoice emailData) {
+
+        final ProgressDialog dialog = new ProgressDialog(this);
+        dialog.setMessage("Sending Email..");
+        dialog.setCancelable(false);
+        dialog.show();
+
+
+        new ThreadExecuter().execute(new Runnable() {
+            @Override
+            public void run() {
+
+                String authenticationString = "Basic TW9obmlBdmQ6ODIyMDgxOTcwNg==";
+                SendEmailAPI travellerApi = Util.getClient().create(SendEmailAPI.class);
+                Call<String> response = travellerApi.sendEmails(authenticationString,emailData);
+
+                response.enqueue(new Callback<String>() {
+                    @Override
+                    public void onResponse(Call<String> call, Response<String> response) {
+
+
+                        try{
+
+                            if(dialog != null && dialog.isShowing())
+                            {
+                                dialog.dismiss();
+                            }
+                            System.out.println(response.code());
+                            if(response.code() == 200||response.code() == 201)
+                            {
+                                if(response.body() != null)
+                                {
+
+
+                                    if(response.body().equalsIgnoreCase("Email Sent Successfully")){
+
+                                    }else{
+                                        //Toast.makeText(ContactUsScreen.this, "Something went wrong. So please contact through Call", Toast.LENGTH_LONG).show();
+                                    }
+                                }
+                            }else{
+                                // Toast.makeText(ContactUsScreen.this, "Something went wrong due to "+response.code()+". So please contact through Call", Toast.LENGTH_LONG).show();
+                            }
+                        }catch (Exception e){
+                            if(dialog != null && dialog.isShowing())
+                            {
+                                dialog.dismiss();
+                            }
+                            e.printStackTrace();
+                        }
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<String> call, Throwable t) {
+                        if(dialog != null && dialog.isShowing())
+                        {
+                            dialog.dismiss();
+                        }
+                    }
+                });
+            }
+        });
+    }
+
     private void showalertbox() throws Exception{
 
 
@@ -1011,7 +1164,7 @@ public class BookingPaymentDetailsScreen extends AppCompatActivity implements Re
             double amount = Double.parseDouble(total[1]);
             double valu = amount * 10;
             double per = valu/100.0;
-            String perValue = String.valueOf(per);
+            String perValue = String.valueOf(amount);
             b.putString("AMOUNT", perValue.trim());
         }else{
             double amount = Double.parseDouble(mAmount.getText().toString());
@@ -1180,6 +1333,224 @@ public class BookingPaymentDetailsScreen extends AppCompatActivity implements Re
             e.printStackTrace();
             Log.e("Error Message --- >>>", "Error Message --- >>> " + e.getMessage());
         }
+    }
+
+    public void getOffersByHotelId(final int hotelId)
+    {
+
+
+        //restId = 0;
+
+        new ThreadExecuter().execute(new Runnable() {
+            @Override
+            public void run() {
+
+                String authenticationString = "Basic TW9obmlBdmQ6ODIyMDgxOTcwNg==";
+
+                OfferAPI hotelOperation = Util.getClient().create(OfferAPI.class);
+                Call<ArrayList<Offers>> response = hotelOperation.getOffersByHotelId(authenticationString, hotelId);
+
+                response.enqueue(new Callback<ArrayList<Offers>>() {
+                    @Override
+                    public void onResponse(Call<ArrayList<Offers>> call, Response<ArrayList<Offers>> response) {
+                        System.out.println("GetHotelByProfileId = "+response.code());
+
+
+
+                        if(response.code() == 200)
+                        {
+                            try{
+                                offersArrayList = response.body();
+
+                            }catch (Exception e){
+                                e.printStackTrace();
+                            }
+
+
+                        }
+                        else
+                        {
+                        }
+
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<ArrayList<Offers>> call, Throwable t) {
+                        System.out.println("Failed");
+                        System.out.println(" Exception = "+t.getMessage());
+
+                    }
+                });
+            }
+        });
+
+
+    }
+
+    public void calculation(final String per){
+
+        try{
+
+            double percentage = Double.parseDouble(per);
+            int totalAMount = Integer.parseInt(totalAmounts);
+
+            double disvalue = totalAMount*percentage;
+            double dis = disvalue/100;
+            int value = totalAMount - (int)dis;
+            mAmount.setText("₹ "+value);
+            mDiscount.setText("₹ "+(int)dis);
+
+            double disvalues = value*percentage;
+            double diss = disvalues/100;
+            int values = value - (int)diss;
+
+            mPay.setText("Pay ₹ "+value);
+            mHotelCharge.setText("₹ "+sellRate);
+            mDisplay.setText("₹ "+displayPrice);
+            mHotelGst.setText("₹ "+gstAmounts);
+
+            mZingoMoney.setText("You got "+per+"% discount from total amount.");
+
+        }catch (Exception e){
+            e.printStackTrace();
+            Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show();
+        }
+
+
+
+
+    }
+
+    public void sendNotification(final FireBaseModel fireBaseModel, final String bookingStatus) {
+
+
+        new ThreadExecuter().execute(new Runnable() {
+            @Override
+            public void run() {
+                String auth_string = Util.getToken(BookingPaymentDetailsScreen.this);
+                RoomBookingAPI apiService =
+                        Util.getClient().create(RoomBookingAPI.class);
+
+
+                System.out.println("Model" + fireBaseModel.toString());
+                Call<ArrayList<String>> call = apiService.sendBookingNotification(auth_string, fireBaseModel)/*getString()*/;
+
+                call.enqueue(new Callback<ArrayList<String>>() {
+                    @Override
+                    public void onResponse(Call<ArrayList<String>> call, retrofit2.Response<ArrayList<String>> response) {
+//                List<RouteDTO.Routes> list = new ArrayList<RouteDTO.Routes>();
+                        int statusCode = response.code();
+                        try{
+                            if (statusCode == 200) {
+
+                                ArrayList<String> list = response.body();
+
+                                Toast.makeText(BookingPaymentDetailsScreen.this, "Notification Send Successfully", Toast.LENGTH_SHORT).show();
+
+
+
+                                //sendEmailattache();
+                               /* NotificationManager nf = new NotificationManager();
+                                nf.setNotificationText(fireBaseModel.getTitle());
+                                nf.setNotificationFor(fireBaseModel.getMessage());
+                                nf.setHotelId(fireBaseModel.getHotelId());
+                                savenotification(nf);*/
+
+                                BookingsNotificationManagers nf = new BookingsNotificationManagers();
+                                nf.setTitle(fireBaseModel.getTitle());
+                                nf.setMessage(fireBaseModel.getMessage());
+                                nf.setHotelId(fireBaseModel.getHotelId());
+                                nf.setTravellerName(fireBaseModel.getTravellerName());
+                                nf.setCheckInDate(fireBaseModel.getCheckInDate());
+                                nf.setCheckOutDate(fireBaseModel.getCheckOutDate());
+                                nf.setTotalAmount(fireBaseModel.getTotalAmount());
+                                nf.setCommissionAmount(fireBaseModel.getCommissionAmount());
+                                nf.setNetAmount(fireBaseModel.getNetAmount());
+                                nf.setNoOfGuest(fireBaseModel.getNoOfGuest());
+                                nf.setNotificationDate(fireBaseModel.getNotificationDate());
+                                nf.setNotificationTime(fireBaseModel.getNotificationTime());
+                                nf.setBookingDateTime(fireBaseModel.getBookingDateTime());
+                                nf.setBooking(bookingStatus);
+                                saveBookingnotification(nf);
+
+
+
+                            } else {
+
+                                Toast.makeText(BookingPaymentDetailsScreen.this, " failed due to status code:" + statusCode, Toast.LENGTH_SHORT).show();
+                            }
+                        }catch (Exception e){
+                            e.printStackTrace();
+                        }
+
+
+//                callGetStartEnd();
+                    }
+
+                    @Override
+                    public void onFailure(Call<ArrayList<String>> call, Throwable t) {
+                        // Log error here since request failed
+
+                        Log.e("TAG", t.toString());
+                    }
+                });
+            }
+
+
+        });
+    }
+
+    private void saveBookingnotification(final BookingsNotificationManagers notification) {
+
+        final ProgressDialog dialog = new ProgressDialog(BookingPaymentDetailsScreen.this);
+        dialog.setMessage("Loading");
+        dialog.setCancelable(false);
+        dialog.show();
+
+        new ThreadExecuter().execute(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("Hotel id = "+notification.getHotelId());
+                String auth_string = Util.getToken(BookingPaymentDetailsScreen.this);
+                RoomBookingAPI travellerApi = Util.getClient().create(RoomBookingAPI.class);
+                Call<BookingsNotificationManagers> response = travellerApi.saveBookingNotification(auth_string,notification);
+
+                response.enqueue(new Callback<BookingsNotificationManagers>() {
+                    @Override
+                    public void onResponse(Call<BookingsNotificationManagers> call, Response<BookingsNotificationManagers> response) {
+
+                        if(dialog != null)
+                        {
+                            dialog.dismiss();
+                        }
+                        try{
+                            System.out.println(response.code());
+                            if(response.code() == 200||response.code() == 201)
+                            {
+                                if(response.body() != null)
+                                {
+
+
+
+                                }
+                            }
+                        }catch (Exception e){
+                            e.printStackTrace();
+                        }
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<BookingsNotificationManagers> call, Throwable t) {
+                        if(dialog != null)
+                        {
+                            dialog.dismiss();
+                        }
+                    }
+                });
+            }
+        });
     }
 
 }

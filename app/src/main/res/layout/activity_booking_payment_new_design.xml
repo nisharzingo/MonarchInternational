@@ -340,65 +340,70 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
+
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="30dp"
-                                android:orientation="vertical"
                                 android:layout_gravity="center"
-                                android:gravity="center"
-                                android:layout_weight="1"
-                                android:layout_marginRight="16dp"
                                 android:layout_marginLeft="16dp"
-                                android:background="#f7f7f9">
+                                android:layout_marginRight="16dp"
+                                android:layout_weight="1"
+                                android:background="#f7f7f9"
+                                android:gravity="center"
+                                android:orientation="vertical">
 
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
+                                <EditText
                                     android:id="@+id/enter_promo_code"
-                                    android:singleLine="true"
-                                    android:maxLines="1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="#00000000"
+                                    android:hint="Offer Code"
                                     android:text="APPONLY"
-                                    android:textColor="#000"
+                                    android:textSize="15dp" />
 
-                                    android:lines="1"/>
+
                             </LinearLayout>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="View Offers"
+                                android:text="Apply Offer"
+                                android:background="@drawable/button_background"
                                 android:id="@+id/apply_promo_code"
                                 android:layout_marginRight="5dp"
-                                android:textColor="@color/colorPrimaryDark"
+                                android:textColor="@color/white"
                                 />
                         </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:visibility="gone"
+
                             android:orientation="horizontal">
 
-                            <CheckBox
-                                android:layout_width="wrap_content"
-                                android:layout_height="50dp"
-                                android:text="Zingo Wallet redeem"
-                                android:id="@+id/zingo_wallet"
-                                android:layout_marginTop="5dp"
-                                android:checked="false"
-                                android:layout_marginLeft="10dp"
-                                />
+
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="50dp"
-                                android:textSize="18sp"
+                                android:textSize="14sp"
                                 android:id="@+id/zingo_money"
                                 android:layout_marginLeft="5dp"
                                 android:gravity="center"
                                 android:layout_gravity="center"
-                                android:text="0"
+                                android:text="You got 10% discount from total amount."
                                 android:textColor="#00FF00"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Apply Offer"
+                                android:visibility="gone"
+                                android:layout_gravity="center"
+                                android:id="@+id/view_promo_code"
+                                android:layout_marginRight="5dp"
+                                android:textColor="@color/colorPrimaryDark"
+                                />
 
                         </LinearLayout>
 
